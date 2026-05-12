@@ -212,7 +212,7 @@ function App() {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-cyanGlow mb-3">{stat.value}</div>
+              <div className={`font-bold text-cyanGlow mb-3 ${stat.value.length > 5 ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'}`}>{stat.value}</div>
               <div className="text-gray-400 text-sm">{stat.label}</div>
             </motion.div>
           ))}
