@@ -61,7 +61,6 @@ function App() {
           <div className="hidden md:flex gap-8 text-sm text-gray-300">
             <a href="#features" className="hover:text-cyanGlow transition">Producto</a>
             <a href="#workflow" className="hover:text-cyanGlow transition">Cómo funciona</a>
-            <a href="#pricing" className="hover:text-cyanGlow transition">Precios</a>
             <a href="#faq" className="hover:text-cyanGlow transition">FAQ</a>
           </div>
 
@@ -224,11 +223,11 @@ function App() {
         <div className="max-w-7xl mx-auto text-center mb-20">
 
           <h2 className="text-5xl font-semibold mb-6">
-            Un flujo técnico estructurado desde documentos hasta planificación inicial.
+            De documentos técnicos a presupuesto listo en horas, no semanas.
           </h2>
 
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Temploct transforma antecedentes de proyecto en información técnica accionable utilizando asistencia inteligente en cada etapa.
+            Seis etapas automatizadas que tu equipo hoy hace manualmente en días. Temploct las resuelve en minutos con precisión técnica.
           </p>
         </div>
 
@@ -237,33 +236,33 @@ function App() {
           {[
             {
               icon: FileText,
-              title: 'Documentos',
-              desc: 'Planos, EE.TT. y antecedentes técnicos.'
+              title: 'Sube los antecedentes',
+              desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.'
             },
             {
               icon: ShieldAlert,
-              title: 'Diagnóstico',
-              desc: 'Detección de inconsistencias y análisis técnico.'
+              title: 'Diagnóstico técnico',
+              desc: 'Detecta inconsistencias entre documentos antes de comprometerte con la licitación.'
             },
             {
               icon: Building2,
-              title: 'Partidas',
-              desc: 'Generación automática estructurada.'
+              title: 'Partidas automáticas',
+              desc: 'Itemizado completo generado y estructurado por la IA, editable.'
             },
             {
               icon: BarChart3,
-              title: 'APU',
-              desc: 'Análisis de precios y rendimientos.'
+              title: 'APU detallado',
+              desc: 'Análisis de precios unitarios con rendimientos y costos actualizados.'
             },
             {
               icon: CheckCircle2,
-              title: 'Presupuesto',
-              desc: 'Presupuesto editable y centralizado.'
+              title: 'Presupuesto listo',
+              desc: 'Presupuesto consolidado, revisable y exportable para tu equipo.'
             },
             {
               icon: CalendarRange,
               title: 'Carta Gantt',
-              desc: 'Planificación inicial automática.'
+              desc: 'Planificación inicial automática alineada al presupuesto.'
             }
           ].map((step, i) => (
             <motion.div
@@ -300,17 +299,20 @@ function App() {
               {
                 quote: "Antes pasábamos dos semanas revisando antecedentes técnicos de una licitación. Con Temploct lo resolvemos en menos de un día.",
                 name: "María Pérez",
-                role: "Jefa de Estudios — Constructora Norte"
+                role: "Jefa de Estudios — Constructora Norte",
+                avatar: "https://i.pravatar.cc/88?img=47"
               },
               {
                 quote: "Detectamos inconsistencias entre arquitectura y estructura que antes solo aparecían en obra. Eso nos ahorra cifras de seis dígitos por proyecto.",
                 name: "Diego Salinas",
-                role: "Project Manager — Andes Ingeniería"
+                role: "Project Manager — Andes Ingeniería",
+                avatar: "https://i.pravatar.cc/88?img=12"
               },
               {
                 quote: "Pudimos triplicar la cantidad de licitaciones que evaluamos al mes sin contratar a nadie nuevo. Es una diferencia operativa enorme.",
                 name: "Carolina Vega",
-                role: "Gerente Técnica — Grupo Pacífico"
+                role: "Gerente Técnica — Grupo Pacífico",
+                avatar: "https://i.pravatar.cc/88?img=49"
               }
             ].map((t, i) => (
               <motion.div
@@ -324,9 +326,11 @@ function App() {
                 <Sparkles className="text-cyanGlow mb-6" size={20} />
                 <p className="text-gray-200 leading-relaxed mb-8 text-lg">"{t.quote}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-cyanGlow/20 border border-cyanGlow/30 flex items-center justify-center text-cyanGlow font-semibold">
-                    {t.name.charAt(0)}
-                  </div>
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-11 h-11 rounded-full object-cover border border-cyanGlow/30"
+                  />
                   <div>
                     <div className="font-semibold">{t.name}</div>
                     <div className="text-gray-400 text-xs">{t.role}</div>
@@ -338,8 +342,8 @@ function App() {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section id="pricing" className="py-32 px-6">
+      {/* PRICING — oculto temporalmente, venta por contacto */}
+      <section id="pricing" className="hidden py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-cyanGlow text-sm tracking-widest uppercase">Precios</span>
