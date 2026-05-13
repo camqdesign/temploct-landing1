@@ -1,0 +1,241 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+
+  <!-- Fondo de la app -->
+  <rect width="1400" height="900" fill="#080f1e"/>
+
+  <!-- Barra de navegación superior -->
+  <rect width="1400" height="54" fill="#0c1829"/>
+  <rect y="54" width="1400" height="1" fill="#1e3f6e" opacity="0.7"/>
+
+  <!-- Logo Temploct en la barra -->
+  <circle cx="30" cy="27" r="12" fill="#22d3ee" opacity="0.15"/>
+  <circle cx="30" cy="27" r="7" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.8"/>
+  <text x="50" y="33" font-size="13" font-weight="700" fill="#D4AF37" letter-spacing="3">TEMPLOCT</text>
+
+  <!-- Tabs de navegación -->
+  <rect x="200" y="0" width="110" height="54" fill="#22d3ee" opacity="0.08"/>
+  <text x="255" y="32" font-size="12" fill="#22d3ee" text-anchor="middle">Presupuesto</text>
+  <rect x="200" y="51" width="110" height="3" fill="#22d3ee"/>
+
+  <text x="326" y="32" font-size="12" fill="#3a5f80">Diagnóstico</text>
+  <text x="430" y="32" font-size="12" fill="#3a5f80">Partidas</text>
+  <text x="506" y="32" font-size="12" fill="#3a5f80">APU</text>
+  <text x="556" y="32" font-size="12" fill="#3a5f80">Carta Gantt</text>
+
+  <!-- Botón exportar -->
+  <rect x="1280" y="14" width="100" height="26" rx="6" fill="#22d3ee" opacity="0.15"/>
+  <rect x="1280" y="14" width="100" height="26" rx="6" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+  <text x="1330" y="31" font-size="11" fill="#22d3ee" text-anchor="middle">↓ Exportar</text>
+
+  <!-- Sidebar izquierdo -->
+  <rect x="0" y="55" width="188" height="845" fill="#0a1422"/>
+  <rect x="188" y="55" width="1" height="845" fill="#1a3a5c" opacity="0.4"/>
+
+  <!-- Items del sidebar -->
+  <rect x="0" y="55" width="188" height="40" fill="#22d3ee" opacity="0.07"/>
+  <rect x="12" y="68" width="3" height="14" rx="1.5" fill="#22d3ee"/>
+  <text x="24" y="79" font-size="12" fill="#22d3ee">Presupuesto</text>
+
+  <text x="24" y="120" font-size="12" fill="#2d5070">Diagnóstico</text>
+  <text x="24" y="152" font-size="12" fill="#2d5070">Mis proyectos</text>
+  <text x="24" y="184" font-size="12" fill="#2d5070">Documentos</text>
+  <text x="24" y="216" font-size="12" fill="#2d5070">Configuración</text>
+
+  <!-- Línea separadora sidebar -->
+  <rect x="12" y="234" width="164" height="1" fill="#1a3a5c" opacity="0.5"/>
+
+  <!-- Proyecto activo en sidebar -->
+  <text x="24" y="258" font-size="10" fill="#2d5070" letter-spacing="1">PROYECTO ACTIVO</text>
+  <rect x="12" y="268" width="164" height="52" rx="8" fill="#0f2035"/>
+  <rect x="12" y="268" width="164" height="52" rx="8" fill="none" stroke="#1e3f6e" stroke-width="1"/>
+  <text x="24" y="288" font-size="11" fill="#7fb3d0">Edificio Comercial</text>
+  <text x="24" y="305" font-size="10" fill="#2d5070">Santiago — 2.400 m²</text>
+
+  <!-- Área de contenido principal -->
+  <!-- Cards de resumen (KPIs) -->
+  <rect x="204" y="72" width="185" height="76" rx="10" fill="#0d1e35"/>
+  <rect x="204" y="72" width="185" height="76" rx="10" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+  <text x="218" y="93" font-size="10" fill="#3a6080" letter-spacing="0.5">PRESUPUESTO TOTAL</text>
+  <text x="218" y="118" font-size="22" font-weight="700" fill="#e8f4f8">$842.6M</text>
+  <text x="218" y="136" font-size="10" fill="#22d3ee">▲ 3.2% vs estimado</text>
+
+  <rect x="400" y="72" width="185" height="76" rx="10" fill="#0d1e35"/>
+  <rect x="400" y="72" width="185" height="76" rx="10" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+  <text x="414" y="93" font-size="10" fill="#3a6080" letter-spacing="0.5">PARTIDAS GENERADAS</text>
+  <text x="414" y="118" font-size="22" font-weight="700" fill="#e8f4f8">247</text>
+  <text x="414" y="136" font-size="10" fill="#22d3ee">100% completadas</text>
+
+  <rect x="596" y="72" width="185" height="76" rx="10" fill="#0d1e35"/>
+  <rect x="596" y="72" width="185" height="76" rx="10" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+  <text x="610" y="93" font-size="10" fill="#3a6080" letter-spacing="0.5">INCONSISTENCIAS</text>
+  <text x="610" y="118" font-size="22" font-weight="700" fill="#f59e0b">4</text>
+  <text x="610" y="136" font-size="10" fill="#f59e0b">Requieren revisión</text>
+
+  <rect x="792" y="72" width="185" height="76" rx="10" fill="#0d1e35"/>
+  <rect x="792" y="72" width="185" height="76" rx="10" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+  <text x="806" y="93" font-size="10" fill="#3a6080" letter-spacing="0.5">TIEMPO ANÁLISIS</text>
+  <text x="806" y="118" font-size="22" font-weight="700" fill="#22d3ee">4.2 hrs</text>
+  <text x="806" y="136" font-size="10" fill="#22d3ee">vs 12 días manual</text>
+
+  <!-- Mini chart área -->
+  <rect x="988" y="72" width="392" height="76" rx="10" fill="#0d1e35"/>
+  <rect x="988" y="72" width="392" height="76" rx="10" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+  <text x="1002" y="93" font-size="10" fill="#3a6080" letter-spacing="0.5">DISTRIBUCIÓN POR CAPÍTULO</text>
+  <!-- Barras mini chart -->
+  <rect x="1002" y="120" width="32" height="22" rx="3" fill="#22d3ee" opacity="0.7"/>
+  <rect x="1042" y="112" width="32" height="30" rx="3" fill="#22d3ee" opacity="0.5"/>
+  <rect x="1082" y="108" width="32" height="34" rx="3" fill="#22d3ee" opacity="0.8"/>
+  <rect x="1122" y="116" width="32" height="26" rx="3" fill="#22d3ee" opacity="0.4"/>
+  <rect x="1162" y="118" width="32" height="24" rx="3" fill="#22d3ee" opacity="0.6"/>
+  <rect x="1202" y="110" width="32" height="32" rx="3" fill="#22d3ee" opacity="0.5"/>
+  <rect x="1242" y="115" width="32" height="27" rx="3" fill="#22d3ee" opacity="0.3"/>
+  <rect x="1282" y="120" width="32" height="22" rx="3" fill="#22d3ee" opacity="0.4"/>
+  <rect x="1322" y="113" width="32" height="29" rx="3" fill="#22d3ee" opacity="0.6"/>
+
+  <!-- Tabla de Partidas / Presupuesto -->
+  <!-- Header tabla -->
+  <rect x="204" y="162" width="1176" height="32" rx="6" fill="#0c1d30"/>
+  <text x="220" y="182" font-size="11" fill="#3a6080" font-weight="600">CAPÍTULO / PARTIDA</text>
+  <text x="680" y="182" font-size="11" fill="#3a6080" font-weight="600">UNID.</text>
+  <text x="780" y="182" font-size="11" fill="#3a6080" font-weight="600">CANTIDAD</text>
+  <text x="900" y="182" font-size="11" fill="#3a6080" font-weight="600">P. UNITARIO</text>
+  <text x="1040" y="182" font-size="11" fill="#3a6080" font-weight="600">TOTAL</text>
+  <text x="1180" y="182" font-size="11" fill="#3a6080" font-weight="600">ESTADO</text>
+  <rect x="204" y="194" width="1176" height="1" fill="#1a3a5c" opacity="0.5"/>
+
+  <!-- Fila capítulo 1 -->
+  <rect x="204" y="195" width="1176" height="28" fill="#0f2035" opacity="0.6"/>
+  <text x="220" y="213" font-size="11" fill="#22d3ee" font-weight="600">01 — OBRAS DE HABILITACIÓN</text>
+  <text x="1040" y="213" font-size="11" fill="#22d3ee" font-weight="600">$38.400.000</text>
+
+  <!-- Filas partidas -->
+  <rect x="204" y="223" width="1176" height="28" fill="#0a1829" opacity="0.4"/>
+  <text x="236" y="241" font-size="11" fill="#7fb3d0">01.01  Instalación de faena</text>
+  <text x="680" y="241" font-size="11" fill="#5a8090">Global</text>
+  <text x="780" y="241" font-size="11" fill="#5a8090">1</text>
+  <text x="900" y="241" font-size="11" fill="#5a8090">$12.400.000</text>
+  <text x="1040" y="241" font-size="11" fill="#e8f4f8">$12.400.000</text>
+  <rect x="1175" y="231" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="243" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <rect x="204" y="251" width="1176" height="28" fill="#0c1d30" opacity="0.3"/>
+  <text x="236" y="269" font-size="11" fill="#7fb3d0">01.02  Cerco perimetral provisional</text>
+  <text x="680" y="269" font-size="11" fill="#5a8090">m.l.</text>
+  <text x="780" y="269" font-size="11" fill="#5a8090">180</text>
+  <text x="900" y="269" font-size="11" fill="#5a8090">$42.000</text>
+  <text x="1040" y="269" font-size="11" fill="#e8f4f8">$7.560.000</text>
+  <rect x="1175" y="259" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="271" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <rect x="204" y="279" width="1176" height="28" fill="#0a1829" opacity="0.4"/>
+  <text x="236" y="297" font-size="11" fill="#7fb3d0">01.03  Bodega y oficina de obra</text>
+  <text x="680" y="297" font-size="11" fill="#5a8090">m²</text>
+  <text x="780" y="297" font-size="11" fill="#5a8090">45</text>
+  <text x="900" y="297" font-size="11" fill="#5a8090">$408.889</text>
+  <text x="1040" y="297" font-size="11" fill="#e8f4f8">$18.400.000</text>
+  <rect x="1175" y="287" width="64" height="18" rx="9" fill="#f59e0b" opacity="0.15"/>
+  <text x="1207" y="299" font-size="10" fill="#f59e0b" text-anchor="middle">Revisar</text>
+
+  <!-- Capítulo 2 -->
+  <rect x="204" y="307" width="1176" height="28" fill="#0f2035" opacity="0.6"/>
+  <text x="220" y="325" font-size="11" fill="#22d3ee" font-weight="600">02 — ESTRUCTURA</text>
+  <text x="1040" y="325" font-size="11" fill="#22d3ee" font-weight="600">$214.800.000</text>
+
+  <rect x="204" y="335" width="1176" height="28" fill="#0a1829" opacity="0.4"/>
+  <text x="236" y="353" font-size="11" fill="#7fb3d0">02.01  Excavaciones y rellenos</text>
+  <text x="680" y="353" font-size="11" fill="#5a8090">m³</text>
+  <text x="780" y="353" font-size="11" fill="#5a8090">620</text>
+  <text x="900" y="353" font-size="11" fill="#5a8090">$48.000</text>
+  <text x="1040" y="353" font-size="11" fill="#e8f4f8">$29.760.000</text>
+  <rect x="1175" y="343" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="355" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <rect x="204" y="363" width="1176" height="28" fill="#0c1d30" opacity="0.3"/>
+  <text x="236" y="381" font-size="11" fill="#7fb3d0">02.02  Hormigón armado fundaciones</text>
+  <text x="680" y="381" font-size="11" fill="#5a8090">m³</text>
+  <text x="780" y="381" font-size="11" fill="#5a8090">285</text>
+  <text x="900" y="381" font-size="11" fill="#5a8090">$312.000</text>
+  <text x="1040" y="381" font-size="11" fill="#e8f4f8">$88.920.000</text>
+  <rect x="1175" y="371" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="383" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <rect x="204" y="391" width="1176" height="28" fill="#0a1829" opacity="0.4"/>
+  <text x="236" y="409" font-size="11" fill="#7fb3d0">02.03  Muros de hormigón</text>
+  <text x="680" y="409" font-size="11" fill="#5a8090">m²</text>
+  <text x="780" y="409" font-size="11" fill="#5a8090">940</text>
+  <text x="900" y="409" font-size="11" fill="#5a8090">$102.000</text>
+  <text x="1040" y="409" font-size="11" fill="#e8f4f8">$95.880.000</text>
+  <rect x="1175" y="399" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="411" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <!-- Capítulo 3 -->
+  <rect x="204" y="419" width="1176" height="28" fill="#0f2035" opacity="0.6"/>
+  <text x="220" y="437" font-size="11" fill="#22d3ee" font-weight="600">03 — INSTALACIONES</text>
+  <text x="1040" y="437" font-size="11" fill="#22d3ee" font-weight="600">$156.200.000</text>
+
+  <rect x="204" y="447" width="1176" height="28" fill="#0a1829" opacity="0.4"/>
+  <text x="236" y="465" font-size="11" fill="#7fb3d0">03.01  Instalación sanitaria agua potable</text>
+  <text x="680" y="465" font-size="11" fill="#5a8090">Global</text>
+  <text x="780" y="465" font-size="11" fill="#5a8090">1</text>
+  <text x="900" y="465" font-size="11" fill="#5a8090">$48.600.000</text>
+  <text x="1040" y="465" font-size="11" fill="#e8f4f8">$48.600.000</text>
+  <rect x="1175" y="455" width="64" height="18" rx="9" fill="#f59e0b" opacity="0.15"/>
+  <text x="1207" y="467" font-size="10" fill="#f59e0b" text-anchor="middle">Revisar</text>
+
+  <rect x="204" y="475" width="1176" height="28" fill="#0c1d30" opacity="0.3"/>
+  <text x="236" y="493" font-size="11" fill="#7fb3d0">03.02  Instalación eléctrica BT</text>
+  <text x="680" y="493" font-size="11" fill="#5a8090">Global</text>
+  <text x="780" y="493" font-size="11" fill="#5a8090">1</text>
+  <text x="900" y="493" font-size="11" fill="#5a8090">$62.400.000</text>
+  <text x="1040" y="493" font-size="11" fill="#e8f4f8">$62.400.000</text>
+  <rect x="1175" y="483" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="495" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <!-- Capítulo 4 -->
+  <rect x="204" y="503" width="1176" height="28" fill="#0f2035" opacity="0.6"/>
+  <text x="220" y="521" font-size="11" fill="#22d3ee" font-weight="600">04 — TERMINACIONES</text>
+  <text x="1040" y="521" font-size="11" fill="#22d3ee" font-weight="600">$198.400.000</text>
+
+  <rect x="204" y="531" width="1176" height="28" fill="#0a1829" opacity="0.4"/>
+  <text x="236" y="549" font-size="11" fill="#7fb3d0">04.01  Revestimiento de fachada</text>
+  <text x="680" y="549" font-size="11" fill="#5a8090">m²</text>
+  <text x="780" y="549" font-size="11" fill="#5a8090">1.240</text>
+  <text x="900" y="549" font-size="11" fill="#5a8090">$84.000</text>
+  <text x="1040" y="549" font-size="11" fill="#e8f4f8">$104.160.000</text>
+  <rect x="1175" y="539" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="551" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <rect x="204" y="559" width="1176" height="28" fill="#0c1d30" opacity="0.3"/>
+  <text x="236" y="577" font-size="11" fill="#7fb3d0">04.02  Cielo falso planchas yeso cartón</text>
+  <text x="680" y="577" font-size="11" fill="#5a8090">m²</text>
+  <text x="780" y="577" font-size="11" fill="#5a8090">890</text>
+  <text x="900" y="577" font-size="11" fill="#5a8090">$36.000</text>
+  <text x="1040" y="577" font-size="11" fill="#e8f4f8">$32.040.000</text>
+  <rect x="1175" y="567" width="64" height="18" rx="9" fill="#22d3ee" opacity="0.15"/>
+  <text x="1207" y="579" font-size="10" fill="#22d3ee" text-anchor="middle">Revisado</text>
+
+  <!-- Filas con gradiente de desvanecimiento al final -->
+  <rect x="204" y="587" width="1176" height="28" fill="#0a1829" opacity="0.3"/>
+  <text x="236" y="605" font-size="11" fill="#7fb3d0" opacity="0.6">04.03  Pavimento porcelanato</text>
+  <text x="1040" y="605" font-size="11" fill="#e8f4f8" opacity="0.5">$42.200.000</text>
+
+  <rect x="204" y="615" width="1176" height="28" fill="#0c1d30" opacity="0.2"/>
+  <text x="236" y="633" font-size="11" fill="#7fb3d0" opacity="0.3">04.04  Pintura interior</text>
+  <text x="1040" y="633" font-size="11" fill="#e8f4f8" opacity="0.3">$20.000.000</text>
+
+  <!-- Footer con totales -->
+  <rect x="204" y="840" width="1176" height="50" fill="#0c1d30"/>
+  <rect x="204" y="840" width="1176" height="1" fill="#1e3f6e" opacity="0.8"/>
+  <text x="220" y="870" font-size="12" fill="#7fb3d0" font-weight="600">TOTAL PRESUPUESTO</text>
+  <text x="1040" y="870" font-size="14" fill="#22d3ee" font-weight="700">$842.600.000</text>
+
+  <!-- Gradiente de desvanecimiento vertical para las filas inferiores -->
+  <defs>
+    <linearGradient id="fadeRows" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080f1e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080f1e" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <rect x="204" y="580" width="1176" height="260" fill="url(#fadeRows)"/>
+
+</svg>

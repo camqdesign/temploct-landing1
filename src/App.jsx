@@ -83,17 +83,31 @@ function App() {
       </nav>
 
       {/* HERO */}
-      <section id="features" className="relative pt-40 pb-32 px-6">
+      <section id="features" className="relative pt-40 pb-32 px-6 overflow-hidden">
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-cyanGlow/10 blur-[180px] rounded-full" />
+        {/* Mockup de fondo */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/mockup.svg"
+            alt=""
+            className="w-full h-full object-cover object-left-top opacity-30"
+          />
+          {/* Gradiente: negro opaco a la izquierda, transparente a la derecha */}
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to right, #080f1e 45%, rgba(8,15,30,0.6) 70%, rgba(8,15,30,0.2) 100%)'}} />
+          {/* Gradiente vertical: oscuro arriba y abajo */}
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #080f1e 0%, transparent 15%, transparent 80%, #080f1e 100%)'}} />
+        </div>
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center relative z-10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-cyanGlow/5 blur-[180px] rounded-full" />
 
-          {/* LEFT */}
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* LEFT — texto centrado sobre el fondo */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="max-w-2xl"
           >
 
             <div className="inline-flex items-center gap-2 border border-cyanGlow/20 bg-cyanGlow/10 rounded-full px-4 py-2 text-sm text-cyanGlow mb-8">
@@ -145,24 +159,6 @@ function App() {
             </div>
           </motion.div>
 
-          {/* RIGHT */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-
-            <div className="absolute inset-0 bg-cyanGlow/10 blur-3xl rounded-full" />
-
-            <div className="relative bg-card/80 backdrop-blur-2xl border border-white/10 rounded-[32px] p-2 shadow-2xl overflow-hidden">
-              <img
-                src="/showcase.png"
-                alt="Dashboard de Temploct mostrando análisis técnico de proyectos de construcción"
-                className="w-full h-auto rounded-[24px] block"
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
