@@ -83,83 +83,89 @@ function App() {
       </nav>
 
       {/* HERO */}
-      <section id="features" className="relative pt-40 pb-32 px-6 overflow-hidden">
+      <section id="features" className="relative pt-40 pb-0 px-6 overflow-hidden">
 
-        {/* Mockup de fondo */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/mockup.svg"
-            alt=""
-            className="w-full h-full object-cover object-left-top opacity-30"
-          />
-          {/* Gradiente: negro opaco a la izquierda, transparente a la derecha */}
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to right, #080f1e 45%, rgba(8,15,30,0.6) 70%, rgba(8,15,30,0.2) 100%)'}} />
-          {/* Gradiente vertical: oscuro arriba y abajo */}
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #080f1e 0%, transparent 15%, transparent 80%, #080f1e 100%)'}} />
-        </div>
+        {/* Glow de fondo */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-cyanGlow/8 blur-[200px] rounded-full pointer-events-none" />
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-cyanGlow/5 blur-[180px] rounded-full" />
+        {/* Texto hero — centrado */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto text-center relative z-10 mb-14"
+        >
+          <div className="inline-flex items-center gap-2 border border-cyanGlow/20 bg-cyanGlow/10 rounded-full px-4 py-2 text-sm text-cyanGlow mb-8">
+            <BrainCircuit size={16} />
+            Intelligent Preconstruction Platform
+          </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.08] font-bold mb-7 tracking-tight">
+            Reduce el tiempo de análisis técnico y acepta más proyectos o licitaciones.
+          </h1>
 
-          {/* LEFT — texto centrado sobre el fondo */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            Sube los antecedentes del proyecto y un grupo de asistentes de IA hará el análisis técnico y planificación de la obra con mayor precisión y control.
+          </p>
+
+          {/* Botones en amarillo Temploct */}
+          <div className="flex flex-wrap gap-4 justify-center">
+            <button
+              onClick={openCalendly}
+              className="bg-cyanGlow text-black px-7 py-4 rounded-2xl font-semibold flex items-center gap-2 hover:shadow-glow transition-all duration-300"
+            >
+              Agendar demo
+              <ArrowRight size={18} />
+            </button>
+            <button
+              onClick={openVideo}
+              className="px-7 py-4 rounded-2xl font-semibold flex items-center gap-2 transition-all duration-300"
+              style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'rgba(212,175,55,0.08)', color: '#D4AF37' }}
+            >
+              <Play size={18} />
+              Ver video
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Mockup app — ventana flotante debajo del texto, estilo Linear */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="max-w-6xl mx-auto relative z-10"
+        >
+          {/* Glow detrás del mockup */}
+          <div className="absolute -inset-4 bg-cyanGlow/10 blur-3xl rounded-3xl pointer-events-none" />
+
+          {/* Ventana del mockup con barra superior simulando un browser/app */}
+          <div
+            className="relative rounded-t-2xl overflow-hidden"
+            style={{ border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 0 80px rgba(34,211,238,0.12), 0 40px 80px rgba(0,0,0,0.6)' }}
           >
-
-            <div className="inline-flex items-center gap-2 border border-cyanGlow/20 bg-cyanGlow/10 rounded-full px-4 py-2 text-sm text-cyanGlow mb-8">
-              <BrainCircuit size={16} />
-              Intelligent Preconstruction Platform
+            {/* Barra superior tipo app (traffic lights) */}
+            <div className="bg-[#0c1829] px-4 py-3 flex items-center gap-2 border-b border-white/5">
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="flex-1 mx-4 bg-white/5 rounded-md h-5" />
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-tight font-semibold mb-8">
-              Reduce semanas de análisis técnico a horas.
-            </h1>
+            {/* Imagen del mockup */}
+            <img
+              src="/mockup.svg"
+              alt="Dashboard de Temploct — análisis técnico y presupuesto de construcción"
+              className="w-full h-auto block"
+            />
 
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-              Sube los antecedentes de tu licitación y obtén diagnóstico técnico, partidas, APU, presupuesto y Carta Gantt en minutos — sin perder la precisión que tu equipo necesita.
-            </p>
+            {/* Gradiente que desvanece la parte inferior del mockup */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+              style={{ background: 'linear-gradient(to bottom, transparent, #080f1e)' }}
+            />
+          </div>
+        </motion.div>
 
-            <div className="flex flex-wrap gap-4 mb-12">
-              <button
-                onClick={openCalendly}
-                className="bg-cyanGlow text-black px-7 py-4 rounded-2xl font-medium flex items-center gap-2 hover:shadow-glow transition-all duration-300"
-              >
-                Agendar demo
-                <ArrowRight size={18} />
-              </button>
-
-              <button
-                onClick={openVideo}
-                className="border border-white/10 bg-white/5 backdrop-blur-xl px-7 py-4 rounded-2xl text-white hover:border-cyanGlow/40 transition-all duration-300 flex items-center gap-2"
-              >
-                <Play size={18} />
-                Ver video
-              </button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6 text-sm">
-              <div>
-                <div className="text-cyanGlow text-2xl font-semibold mb-1">68%</div>
-                <div className="text-gray-400">menos tiempo de revisión</div>
-              </div>
-
-              <div>
-                <div className="text-cyanGlow text-2xl font-semibold mb-1">3×</div>
-                <div className="text-gray-400">más licitaciones al mes</div>
-              </div>
-
-              <div>
-                <div className="text-cyanGlow text-2xl font-semibold mb-1">96%</div>
-                <div className="text-gray-400">precisión en detección</div>
-              </div>
-            </div>
-          </motion.div>
-
-        </div>
       </section>
 
       {/* LOGO CLOUD */}
