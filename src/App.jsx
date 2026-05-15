@@ -184,27 +184,26 @@ function App() {
       {/* LOGO CLOUD */}
       <section className="px-6 py-16 border-y border-white/5 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-gray-500 text-sm mb-3 uppercase tracking-widest">
+          <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
             Constructoras pioneras en programa beta
           </p>
-          <p className="text-center text-gray-600 text-xs mb-12">
-            Empresas seleccionadas que están probando Temploct antes de su lanzamiento oficial
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-12 items-center">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
             {[
-              'ANDES INGENIERÍA',
-              'GRUPO PACÍFICO',
-              'CONSTRUCTORA NORTE',
-              'EDIFICA SUR',
-              'TECNO OBRA',
-              'INGEMET'
-            ].map((name) => (
-              <div
-                key={name}
-                className="text-center text-gray-400 font-semibold tracking-wider text-sm md:text-base hover:text-white transition opacity-70 hover:opacity-100"
-              >
-                {name}
-              </div>
+              { src: '/logos/logo-fuemin.png',    alt: 'Fuemin' },
+              { src: '/logos/logo-abf.png',       alt: 'ABF Constructora' },
+              { src: '/logos/logo-la27.png',      alt: 'LA 27 Ingeniería' },
+              { src: '/logos/logo-regenera.png',  alt: 'Regenera Inmobiliaria' },
+              { src: '/logos/logo-rrs.png',       alt: 'RRS Ingeniería' },
+            ].map((logo) => (
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 md:h-12 object-contain transition-all duration-300"
+                style={{ filter: 'grayscale(100%) brightness(1.8)', opacity: 0.6 }}
+                onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0%) brightness(1)'; e.currentTarget.style.opacity = '1'; }}
+                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(1.8)'; e.currentTarget.style.opacity = '0.6'; }}
+              />
             ))}
           </div>
         </div>
@@ -212,12 +211,11 @@ function App() {
 
       {/* STATS BAR */}
       <section className="px-6 py-24 relative z-10">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
-            { value: '68%', label: 'Reducción promedio en tiempo de revisión técnica' },
+            { value: '-68%', label: 'Reducción promedio en tiempo de revisión técnica' },
             { value: '3×', label: 'Más licitaciones evaluadas por el mismo equipo' },
             { value: '96%', label: 'Precisión en detección de inconsistencias' },
-            { value: 'Días → Horas', label: 'De antecedentes a presupuesto listo' }
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
