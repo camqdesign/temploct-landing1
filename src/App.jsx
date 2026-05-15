@@ -85,8 +85,21 @@ function App() {
       {/* HERO */}
       <section id="features" className="relative pt-40 pb-0 px-6 overflow-hidden">
 
+        {/* Imagen de fondo — pantalla Diagnóstico del SaaS */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src="/mockup-diagnostico.svg"
+            alt=""
+            className="w-full h-full object-cover object-top opacity-40"
+          />
+          {/* Oscurecimiento central — radial: más oscuro en el centro donde está el texto */}
+          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(8,15,30,0.92) 0%, rgba(8,15,30,0.7) 50%, rgba(8,15,30,0.3) 100%)'}} />
+          {/* Oscurecimiento en bordes top/bottom */}
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #080f1e 0%, transparent 12%, transparent 75%, #080f1e 100%)'}} />
+        </div>
+
         {/* Glow de fondo */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-cyanGlow/8 blur-[200px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-cyanGlow/5 blur-[200px] rounded-full pointer-events-none" />
 
         {/* Texto hero — centrado */}
         <motion.div
@@ -97,7 +110,7 @@ function App() {
         >
           <div className="inline-flex items-center gap-2 border border-cyanGlow/20 bg-cyanGlow/10 rounded-full px-4 py-2 text-sm text-cyanGlow mb-8">
             <BrainCircuit size={16} />
-            Intelligent Preconstruction Platform
+            Sistema de análisis y control Inteligente
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.08] font-bold mb-7 tracking-tight">

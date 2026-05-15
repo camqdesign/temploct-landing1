@@ -1,0 +1,151 @@
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+
+  <!-- Fondo -->
+  <rect width="1400" height="800" fill="#080f1e"/>
+
+  <!-- Barra superior -->
+  <rect width="1400" height="54" fill="#0c1829"/>
+  <rect y="54" width="1400" height="1" fill="#1e3f6e" opacity="0.6"/>
+
+  <!-- Logo -->
+  <circle cx="30" cy="27" r="12" fill="#22d3ee" opacity="0.15"/>
+  <circle cx="30" cy="27" r="7" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.8"/>
+  <text x="50" y="33" font-size="13" font-weight="700" fill="#D4AF37" letter-spacing="3">TEMPLOCT</text>
+
+  <!-- Tabs -->
+  <text x="175" y="32" font-size="12" fill="#3a5f80">Presupuesto</text>
+  <rect x="270" y="0" width="110" height="54" fill="#22d3ee" opacity="0.08"/>
+  <text x="325" y="32" font-size="12" fill="#22d3ee" text-anchor="middle">Diagnóstico</text>
+  <rect x="270" y="51" width="110" height="3" fill="#22d3ee"/>
+  <text x="396" y="32" font-size="12" fill="#3a5f80">Partidas</text>
+  <text x="462" y="32" font-size="12" fill="#3a5f80">APU</text>
+  <text x="510" y="32" font-size="12" fill="#3a5f80">Carta Gantt</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="55" width="188" height="745" fill="#0a1422"/>
+  <rect x="188" y="55" width="1" height="745" fill="#1a3a5c" opacity="0.4"/>
+  <rect x="0" y="95" width="188" height="36" fill="#22d3ee" opacity="0.07"/>
+  <rect x="12" y="107" width="3" height="14" rx="1.5" fill="#22d3ee"/>
+  <text x="24" y="118" font-size="12" fill="#22d3ee">Diagnóstico</text>
+  <text x="24" y="152" font-size="12" fill="#2d5070">Presupuesto</text>
+  <text x="24" y="184" font-size="12" fill="#2d5070">Mis proyectos</text>
+  <text x="24" y="216" font-size="12" fill="#2d5070">Documentos</text>
+  <rect x="12" y="234" width="164" height="1" fill="#1a3a5c" opacity="0.5"/>
+  <text x="24" y="258" font-size="10" fill="#2d5070" letter-spacing="1">PROYECTO ACTIVO</text>
+  <rect x="12" y="268" width="164" height="52" rx="8" fill="#0f2035"/>
+  <rect x="12" y="268" width="164" height="52" rx="8" fill="none" stroke="#1e3f6e" stroke-width="1"/>
+  <text x="24" y="288" font-size="11" fill="#7fb3d0">Edificio Comercial</text>
+  <text x="24" y="305" font-size="10" fill="#2d5070">Santiago — 2.400 m²</text>
+
+  <!-- Contenido principal -->
+
+  <!-- Header del diagnóstico -->
+  <text x="210" y="86" font-size="18" font-weight="700" fill="#e8f4f8">Diagnóstico Técnico</text>
+  <text x="210" y="104" font-size="12" fill="#3a6080">Análisis de consistencia entre documentos del proyecto</text>
+
+  <!-- Resumen de alertas -->
+  <rect x="210" y="115" width="180" height="72" rx="10" fill="#1a0a0a"/>
+  <rect x="210" y="115" width="180" height="72" rx="10" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <text x="226" y="138" font-size="10" fill="#ef4444" letter-spacing="0.5">CRÍTICAS</text>
+  <text x="226" y="162" font-size="28" font-weight="700" fill="#ef4444">2</text>
+  <text x="226" y="178" font-size="10" fill="#6a3030">Requieren acción</text>
+
+  <rect x="402" y="115" width="180" height="72" rx="10" fill="#1a120a"/>
+  <rect x="402" y="115" width="180" height="72" rx="10" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+  <text x="418" y="138" font-size="10" fill="#f59e0b" letter-spacing="0.5">ADVERTENCIAS</text>
+  <text x="418" y="162" font-size="28" font-weight="700" fill="#f59e0b">4</text>
+  <text x="418" y="178" font-size="10" fill="#6a5030">Revisar antes de licitar</text>
+
+  <rect x="594" y="115" width="180" height="72" rx="10" fill="#0a1a0a"/>
+  <rect x="594" y="115" width="180" height="72" rx="10" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.4"/>
+  <text x="610" y="138" font-size="10" fill="#22c55e" letter-spacing="0.5">VERIFICADOS</text>
+  <text x="610" y="162" font-size="28" font-weight="700" fill="#22c55e">18</text>
+  <text x="610" y="178" font-size="10" fill="#2a5a2a">Sin observaciones</text>
+
+  <rect x="786" y="115" width="590" height="72" rx="10" fill="#0d1e35"/>
+  <rect x="786" y="115" width="590" height="72" rx="10" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+  <text x="802" y="138" font-size="10" fill="#3a6080" letter-spacing="0.5">DOCUMENTOS ANALIZADOS</text>
+  <text x="802" y="162" font-size="13" fill="#7fb3d0">Planos Arquitectura · EE.TT. · Planos Estructura · Bases Adm.</text>
+  <text x="802" y="178" font-size="10" fill="#22d3ee">4 documentos · 847 páginas · Procesado en 4.2 hrs</text>
+
+  <!-- Lista de inconsistencias -->
+  <!-- Header -->
+  <rect x="210" y="200" width="1166" height="32" rx="6" fill="#0c1d30"/>
+  <text x="226" y="220" font-size="11" fill="#3a6080" font-weight="600">INCONSISTENCIA DETECTADA</text>
+  <text x="780" y="220" font-size="11" fill="#3a6080" font-weight="600">DOCUMENTOS</text>
+  <text x="980" y="220" font-size="11" fill="#3a6080" font-weight="600">SEVERIDAD</text>
+  <text x="1110" y="220" font-size="11" fill="#3a6080" font-weight="600">ESTADO</text>
+  <rect x="210" y="232" width="1166" height="1" fill="#1a3a5c" opacity="0.5"/>
+
+  <!-- Inconsistencia 1 - Crítica -->
+  <rect x="210" y="233" width="1166" height="64" fill="#1a0505" opacity="0.6"/>
+  <rect x="210" y="233" width="3" height="64" fill="#ef4444"/>
+  <text x="226" y="254" font-size="12" fill="#e8f4f8" font-weight="600">Discrepancia en cotas de fundación</text>
+  <text x="226" y="271" font-size="11" fill="#6a4040">Planos de arquitectura indican cota -1.20m, planos de estructura señalan -1.50m.</text>
+  <text x="226" y="287" font-size="11" fill="#6a4040">Diferencia de 30cm puede afectar volúmenes de excavación y hormigón.</text>
+  <text x="780" y="265" font-size="11" fill="#7fb3d0">Arq. (L-01) vs Estr. (E-03)</text>
+  <rect x="976" y="245" width="80" height="22" rx="11" fill="#ef4444" opacity="0.15"/>
+  <rect x="976" y="245" width="80" height="22" rx="11" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <text x="1016" y="260" font-size="10" fill="#ef4444" text-anchor="middle">● Crítica</text>
+  <rect x="1106" y="245" width="80" height="22" rx="11" fill="#f59e0b" opacity="0.1"/>
+  <text x="1146" y="260" font-size="10" fill="#f59e0b" text-anchor="middle">En revisión</text>
+
+  <!-- Inconsistencia 2 - Crítica -->
+  <rect x="210" y="297" width="1166" height="64" fill="#1a0505" opacity="0.4"/>
+  <rect x="210" y="297" width="3" height="64" fill="#ef4444"/>
+  <text x="226" y="318" font-size="12" fill="#e8f4f8" font-weight="600">Superficie habitable no coincide entre documentos</text>
+  <text x="226" y="335" font-size="11" fill="#6a4040">EE.TT. indica 2.380 m², memoria de cálculo señala 2.410 m². Diferencia de 30 m²</text>
+  <text x="226" y="351" font-size="11" fill="#6a4040">puede generar errores en presupuesto de terminaciones y GGEE.</text>
+  <text x="780" y="329" font-size="11" fill="#7fb3d0">EE.TT. (p.12) vs Mem. (p.4)</text>
+  <rect x="976" y="309" width="80" height="22" rx="11" fill="#ef4444" opacity="0.15"/>
+  <rect x="976" y="309" width="80" height="22" rx="11" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <text x="1016" y="324" font-size="10" fill="#ef4444" text-anchor="middle">● Crítica</text>
+  <rect x="1106" y="309" width="80" height="22" rx="11" fill="#1a3a5c" opacity="0.3"/>
+  <text x="1146" y="324" font-size="10" fill="#3a6080" text-anchor="middle">Pendiente</text>
+
+  <!-- Inconsistencia 3 - Advertencia -->
+  <rect x="210" y="361" width="1166" height="56" fill="#0a1829" opacity="0.4"/>
+  <rect x="210" y="361" width="3" height="56" fill="#f59e0b"/>
+  <text x="226" y="382" font-size="12" fill="#e8f4f8" font-weight="600">Especificación de acero estructural ambigua</text>
+  <text x="226" y="399" font-size="11" fill="#5a5030">EE.TT. no especifica grado de acero en losa. Planos estructurales indican A630-420H.</text>
+  <text x="226" y="411" font-size="11" fill="#5a5030">Requiere confirmación para APU de fierro.</text>
+  <text x="780" y="393" font-size="11" fill="#7fb3d0">EE.TT. (p.8) vs Estr. (E-07)</text>
+  <rect x="976" y="373" width="80" height="22" rx="11" fill="#f59e0b" opacity="0.12"/>
+  <rect x="976" y="373" width="80" height="22" rx="11" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+  <text x="1016" y="388" font-size="10" fill="#f59e0b" text-anchor="middle">▲ Media</text>
+  <rect x="1106" y="373" width="80" height="22" rx="11" fill="#22d3ee" opacity="0.1"/>
+  <text x="1146" y="388" font-size="10" fill="#22d3ee" text-anchor="middle">Resuelto</text>
+
+  <!-- Inconsistencia 4 - Advertencia -->
+  <rect x="210" y="417" width="1166" height="56" fill="#0c1d30" opacity="0.3"/>
+  <rect x="210" y="417" width="3" height="56" fill="#f59e0b"/>
+  <text x="226" y="438" font-size="12" fill="#e8f4f8" font-weight="600">Ventilación mecánica no incluida en presupuesto referencial</text>
+  <text x="226" y="455" font-size="11" fill="#5a5030">Bases administrativas exigen sistema de ventilación forzada en subterráneo.</text>
+  <text x="226" y="467" font-size="11" fill="#5a5030">No se encontró partida en itemizado preliminar.</text>
+  <text x="780" y="449" font-size="11" fill="#7fb3d0">Bases Adm. (p.22) vs Partidas</text>
+  <rect x="976" y="429" width="80" height="22" rx="11" fill="#f59e0b" opacity="0.12"/>
+  <text x="1016" y="444" font-size="10" fill="#f59e0b" text-anchor="middle">▲ Media</text>
+  <rect x="1106" y="429" width="80" height="22" rx="11" fill="#1a3a5c" opacity="0.3"/>
+  <text x="1146" y="444" font-size="10" fill="#3a6080" text-anchor="middle">Pendiente</text>
+
+  <!-- Inconsistencia 5 - Advertencia (desvanecida) -->
+  <rect x="210" y="473" width="1166" height="48" fill="#0a1829" opacity="0.3"/>
+  <rect x="210" y="473" width="3" height="48" fill="#f59e0b" opacity="0.5"/>
+  <text x="226" y="494" font-size="12" fill="#e8f4f8" opacity="0.6">Plazo de ejecución difiere entre documentos</text>
+  <text x="226" y="510" font-size="11" fill="#5a5030" opacity="0.5">Bases indican 18 meses, memoria describe 20 meses.</text>
+
+  <!-- Inconsistencia 6 - OK (desvanecida) -->
+  <rect x="210" y="521" width="1166" height="48" fill="#0a1829" opacity="0.2"/>
+  <rect x="210" y="521" width="3" height="48" fill="#22c55e" opacity="0.3"/>
+  <text x="226" y="542" font-size="12" fill="#e8f4f8" opacity="0.3">Sistema de impermeabilización verificado</text>
+
+  <!-- Gradiente de desvanecimiento -->
+  <defs>
+    <linearGradient id="fadeBottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080f1e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080f1e" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <rect x="210" y="500" width="1166" height="300" fill="url(#fadeBottom)"/>
+
+</svg>
