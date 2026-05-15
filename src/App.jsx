@@ -200,9 +200,9 @@ function App() {
                 src={logo.src}
                 alt={logo.alt}
                 className="h-10 md:h-12 object-contain transition-all duration-300"
-                style={{ filter: 'grayscale(100%) brightness(1.8)', opacity: 0.6 }}
-                onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0%) brightness(1)'; e.currentTarget.style.opacity = '1'; }}
-                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(1.8)'; e.currentTarget.style.opacity = '0.6'; }}
+                style={{ filter: 'grayscale(100%) brightness(5) invert(1)', opacity: 0.7 }}
+                onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
+                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5) invert(1)'; e.currentTarget.style.opacity = '0.7'; }}
               />
             ))}
           </div>
