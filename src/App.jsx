@@ -189,20 +189,21 @@ function App() {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
             {[
-              { src: '/logos/logo-fuemin.png',    alt: 'Fuemin' },
-              { src: '/logos/logo-abf.png',       alt: 'ABF Constructora' },
-              { src: '/logos/logo-la27.png',      alt: 'LA 27 Ingeniería' },
-              { src: '/logos/logo-regenera.png',  alt: 'Regenera Inmobiliaria' },
-              { src: '/logos/logo-rrs.png',       alt: 'RRS Ingeniería' },
+              { src: '/logos/logo-fuemin.png',   alt: 'Fuemin' },
+              { src: '/logos/logo-abf.png',      alt: 'ABF Constructora' },
+              { src: '/logos/logo-ryv.png',      alt: 'R&V Constructora' },
+              { src: '/logos/logo-la27.png',     alt: 'LA 27 Ingeniería' },
+              { src: '/logos/logo-rrs.png',      alt: 'RRS Ingeniería' },
+              { src: '/logos/logo-incocim.png',  alt: 'Incocim Group' },
             ].map((logo) => (
               <img
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
                 className="h-10 md:h-12 object-contain transition-all duration-300"
-                style={{ filter: 'grayscale(100%) brightness(1.8)', opacity: 0.75, mixBlendMode: 'screen' }}
-                onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; e.currentTarget.style.mixBlendMode = 'normal'; }}
-                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(1.8)'; e.currentTarget.style.opacity = '0.75'; e.currentTarget.style.mixBlendMode = 'screen'; }}
+                style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.6 }}
+                onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
+                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.6'; }}
               />
             ))}
           </div>
