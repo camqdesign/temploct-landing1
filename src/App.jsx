@@ -200,7 +200,7 @@ function App() {
                 key={logo.alt}
                 src={logo.src}
                 alt={logo.alt}
-                className="h-10 md:h-12 object-contain transition-all duration-300"
+                className="h-16 md:h-20 object-contain transition-all duration-300"
                 style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.6 }}
                 onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
                 onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.6'; }}
