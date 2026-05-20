@@ -381,45 +381,43 @@ function App() {
       {/* HOW IT WORKS */}
       <section id="workflow" className="py-32 px-6">
         <div className="max-w-5xl mx-auto text-center mb-16">
-          <p className="text-lg text-gray-400 leading-relaxed">
+          <p className="text-xl text-gray-400 leading-relaxed">
             Seis etapas automatizadas que tu equipo hoy hace manualmente en días.<br />
             Temploct las resuelve en minutos con precisión técnica.
           </p>
         </div>
 
-        {/* Cards con flujo izquierda → derecha */}
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-0">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-6 gap-4">
           {[
-            { icon: FileText,     title: 'Sube los antecedentes',   desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.' },
-            { icon: ShieldAlert,  title: 'Diagnóstico técnico',      desc: 'Detecta inconsistencias entre documentos antes de comprometerte.' },
-            { icon: Building2,    title: 'Partidas automáticas',     desc: 'Itemizado completo generado por IA, estructurado y editable.' },
-            { icon: BarChart3,    title: 'APU detallado',            desc: 'Precios unitarios con rendimientos y costos actualizados.' },
-            { icon: CheckCircle2, title: 'Presupuesto listo',        desc: 'Consolidado, revisable y exportable para tu equipo.' },
-            { icon: CalendarRange,title: 'Carta Gantt',              desc: 'Planificación inicial automática alineada al presupuesto.' },
-          ].map((step, i, arr) => (
-            <div key={step.title} className="flex items-stretch flex-1 min-w-0">
-              {/* Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
-                viewport={{ once: true }}
-                className="flex-1 bg-card/70 border border-white/5 rounded-2xl p-5 backdrop-blur-xl hover:border-cyanGlow/20 hover:bg-cyanGlow/5 transition-all duration-500 flex flex-col"
-              >
-                {/* Número de paso */}
-                <span className="text-xs font-semibold text-cyanGlow/50 tracking-widest mb-3">0{i + 1}</span>
-                <step.icon className="text-cyanGlow mb-4" size={24} />
-                <h3 className="text-sm font-semibold text-white mb-2 leading-snug">{step.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed mt-auto">{step.desc}</p>
-              </motion.div>
+            { icon: FileText,      title: 'Documentos',   desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.' },
+            { icon: ShieldAlert,   title: 'Diagnóstico',  desc: 'Detecta inconsistencias entre documentos antes de comprometerte.' },
+            { icon: Building2,     title: 'Partidas',     desc: 'Itemizado completo generado por IA, estructurado y editable.' },
+            { icon: BarChart3,     title: 'APU',          desc: 'Precios unitarios con rendimientos y costos actualizados.' },
+            { icon: CheckCircle2,  title: 'Presupuesto',  desc: 'Consolidado, revisable y exportable para tu equipo.' },
+            { icon: CalendarRange, title: 'Programación', desc: 'Planificación inicial automática alineada al presupuesto.' },
+          ].map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="relative bg-card/70 border border-white/5 border-l-2 border-l-cyanGlow rounded-2xl p-6 backdrop-blur-xl hover:border-cyanGlow/30 hover:bg-cyanGlow/5 transition-all duration-500 overflow-hidden flex flex-col"
+            >
+              {/* Número grande gris de fondo */}
+              <span className="absolute right-3 top-3 text-6xl font-bold text-white/5 leading-none select-none">
+                {String(i + 1).padStart(2, '0')}
+              </span>
 
-              {/* Flecha conectora entre cards (excepto en la última) */}
-              {i < arr.length - 1 && (
-                <div className="hidden lg:flex items-center px-1 text-cyanGlow/30 shrink-0">
-                  <ArrowRight size={16} />
-                </div>
-              )}
-            </div>
+              {/* Icono + etiqueta PASO */}
+              <div className="flex items-center gap-2 mb-5">
+                <step.icon className="text-cyanGlow" size={20} />
+                <span className="text-xs text-gray-500 tracking-widest uppercase">— Paso {String(i + 1).padStart(2, '0')}</span>
+              </div>
+
+              <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
