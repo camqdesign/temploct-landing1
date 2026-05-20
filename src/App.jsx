@@ -350,9 +350,11 @@ function App() {
       {/* HOW IT WORKS */}
       <section id="workflow" className="pt-10 pb-10 px-6">
         <div className="max-w-5xl mx-auto text-center mb-16">
-          <p className="text-xl text-gray-400 leading-relaxed">
-            Seis etapas automatizadas que tu equipo hoy hace manualmente en días.<br />
-            Temploct las resuelve en minutos con precisión técnica.
+          <p className="text-xl leading-relaxed">
+            <strong style={{ color: '#D4AF37' }}>Seis etapas</strong>{' '}
+            <span className="text-gray-400">que tu equipo hace manualmente en días.</span>{' '}
+            <strong style={{ color: '#D4AF37' }}>Temploct</strong>{' '}
+            <span className="text-gray-400">las resuelve en horas con precisión técnica.</span>
           </p>
         </div>
 
@@ -373,6 +375,16 @@ function App() {
               viewport={{ once: true }}
               className="relative bg-card/70 border border-white/5 border-l-2 border-l-cyanGlow rounded-2xl p-6 backdrop-blur-xl hover:border-cyanGlow/30 hover:bg-cyanGlow/5 transition-all duration-500 overflow-hidden flex flex-col"
             >
+              {/* Flecha de flujo — aparece a la derecha de cada card excepto la última */}
+              {i < 5 && (
+                <span
+                  className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-lg font-bold select-none"
+                  style={{ color: '#D4AF37' }}
+                >
+                  ›
+                </span>
+              )}
+
               {/* Número grande gris de fondo */}
               <span className="absolute right-3 top-3 text-6xl font-bold text-white/5 leading-none select-none">
                 {String(i + 1).padStart(2, '0')}
@@ -381,7 +393,9 @@ function App() {
               {/* Icono + etiqueta PASO */}
               <div className="flex items-center gap-2 mb-5">
                 <step.icon className="text-cyanGlow" size={20} />
-                <span className="text-xs text-gray-500 tracking-widest uppercase">— Paso {String(i + 1).padStart(2, '0')}</span>
+                <span className="text-xs tracking-widest uppercase font-bold" style={{ color: '#D4AF37' }}>
+                  — Paso {String(i + 1).padStart(2, '0')}
+                </span>
               </div>
 
               <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
