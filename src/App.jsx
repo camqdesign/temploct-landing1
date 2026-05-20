@@ -28,6 +28,45 @@ function App() {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [formEmail, setFormEmail] = useState('')
+  const [workflowStep, setWorkflowStep] = useState(0)
+
+  const etapas = [
+    {
+      title: 'Almacenamiento y lectura de documentos técnicos del proyecto',
+      desc: 'Carga todos los antecedentes técnicos de tu proyecto para que nuestros agentes especializados trabajen en torno a ellos. Entre más robusta sea la información, mejor será el análisis del proyecto.',
+      img: '/etapas/ss-01.png'
+    },
+    {
+      title: 'Diagnóstico de inconsistencias entre documentos',
+      desc: 'Atlas analiza todos los documentos en paralelo y detecta discrepancias entre planos, especificaciones y bases administrativas. Sabes exactamente qué revisar antes de comprometerte.',
+      img: '/etapas/ss-02.png'
+    },
+    {
+      title: 'Generación del itemizado estructurado por especialidad',
+      desc: 'El sistema genera automáticamente las partidas del proyecto organizadas por especialidad. Puedes revisarlas, editarlas y complementarlas con tu criterio técnico.',
+      img: '/etapas/ss-03.png'
+    },
+    {
+      title: 'Análisis de precios unitarios con rendimientos reales',
+      desc: 'Cada partida se valoriza con APUs construidos desde tu biblioteca de precios y rendimientos. Se actualiza en base a zona, tipo de obra y datos de mercado.',
+      img: '/etapas/ss-04.png'
+    },
+    {
+      title: 'Presupuesto consolidado listo para presentar',
+      desc: 'El presupuesto se genera automáticamente a partir del itemizado y los APUs. Revisable, exportable y con trazabilidad completa de cada número.',
+      img: '/etapas/ss-05.png'
+    },
+    {
+      title: 'Programación de obra alineada al presupuesto',
+      desc: 'Genera la planificación inicial del proyecto directamente desde las partidas y plazos definidos. Una carta Gantt base que puedes ajustar con tu equipo.',
+      img: '/etapas/ss-06.png'
+    },
+    {
+      title: 'Control y seguimiento de ejecución en obra',
+      desc: 'Registra el avance real del proyecto y compáralo con lo planificado. Detecta desviaciones de costo y plazo a tiempo para tomar decisiones con información.',
+      img: '/etapas/ss-07.png'
+    },
+  ]
 
   const marqueeRef = useRef(null)
   const [logoContainerWidth, setLogoContainerWidth] = useState(null)
@@ -348,61 +387,111 @@ function App() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="workflow" className="pt-10 pb-10 px-6">
-        <div className="max-w-5xl mx-auto text-center mb-16">
-          <p className="text-xl leading-relaxed">
-            <strong style={{ color: '#D4AF37' }}>Seis etapas</strong>{' '}
-            <span className="text-gray-400">que tu equipo hace manualmente en días.</span>{' '}
-            <strong style={{ color: '#D4AF37' }}>Temploct</strong>{' '}
-            <span className="text-gray-400">las resuelve en horas con precisión técnica.</span>
+      <section id="workflow" className="relative z-10">
+
+        {/* Barra superior — contador de paso + título + segmentos de progreso */}
+        <div className="border-y border-white/5 bg-[#0c1829]/60 backdrop-blur-xl px-6 py-4">
+          <div className="max-w-7xl mx-auto flex items-center gap-8">
+            <span className="text-sm font-bold tracking-widest uppercase shrink-0" style={{ color: '#D4AF37' }}>
+              PASO {String(workflowStep + 1).padStart(2, '0')} / 07
+            </span>
+            <span className="text-sm text-gray-300 flex-1 truncate hidden md:block">
+              {etapas[workflowStep].title}
+            </span>
+            {/* Segmentos — cada uno es un paso clickeable */}
+            <div className="hidden md:flex items-center gap-1.5 shrink-0">
+              {etapas.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setWorkflowStep(i)}
+                  className="h-0.5 w-8 rounded-full transition-all duration-300 hover:opacity-100"
+                  style={{ background: i <= workflowStep ? '#22d3ee' : 'rgba(255,255,255,0.12)' }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Contenido principal */}
+        <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Columna izquierda — texto */}
+          <motion.div
+            key={`text-${workflowStep}`}
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="border-l-2 border-cyanGlow pl-8"
+          >
+            <span className="text-sm font-bold tracking-widest uppercase mb-6 block" style={{ color: '#22d3ee' }}>
+              — PASO {String(workflowStep + 1).padStart(2, '0')}
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold leading-[1.08] tracking-tight text-white mb-6">
+              {etapas[workflowStep].title}
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              {etapas[workflowStep].desc}
+            </p>
+
+            {/* Botones de navegación entre pasos */}
+            <div className="flex items-center gap-4 mt-10">
+              <button
+                onClick={() => setWorkflowStep(prev => Math.max(0, prev - 1))}
+                disabled={workflowStep === 0}
+                className="px-5 py-2.5 rounded-xl border border-white/10 text-sm font-medium transition-all duration-300 disabled:opacity-25 hover:border-cyanGlow/40"
+              >
+                ← Anterior
+              </button>
+              <button
+                onClick={() => setWorkflowStep(prev => Math.min(6, prev + 1))}
+                disabled={workflowStep === 6}
+                className="px-5 py-2.5 rounded-xl bg-cyanGlow/10 border border-cyanGlow/30 text-cyanGlow text-sm font-medium transition-all duration-300 disabled:opacity-25 hover:bg-cyanGlow/20"
+              >
+                Siguiente →
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Columna derecha — screenshot */}
+          <motion.div
+            key={`img-${workflowStep}`}
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="relative"
+          >
+            <div className="absolute -inset-4 bg-cyanGlow/5 blur-3xl rounded-3xl pointer-events-none" />
+            <div
+              className="relative rounded-2xl overflow-hidden"
+              style={{ border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 0 60px rgba(34,211,238,0.08), 0 30px 60px rgba(0,0,0,0.5)' }}
+            >
+              {/* Chrome del navegador — barra superior con puntos de colores */}
+              <div className="bg-[#0c1829] px-4 py-3 flex items-center gap-2 border-b border-white/5">
+                <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                <div className="flex-1 mx-4 text-center text-xs text-gray-500 truncate">
+                  Temploct AIP — {etapas[workflowStep].title}
+                </div>
+              </div>
+              <img
+                src={etapas[workflowStep].img}
+                alt={etapas[workflowStep].title}
+                className="w-full h-auto block"
+              />
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* Subtítulo debajo — visible en móvil también */}
+        <div className="max-w-5xl mx-auto px-6 pb-10 text-center -mt-6">
+          <p className="text-base text-gray-500">
+            <strong style={{ color: '#D4AF37' }}>Siete etapas</strong> que tu equipo hace manualmente en días.{' '}
+            <strong style={{ color: '#D4AF37' }}>Temploct</strong> las resuelve en horas con precisión técnica.
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-6 gap-4">
-          {[
-            { icon: FileText,      title: 'Documentos',   desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.' },
-            { icon: ShieldAlert,   title: 'Diagnóstico',  desc: 'Detecta inconsistencias entre documentos antes de comprometerte.' },
-            { icon: Building2,     title: 'Partidas',     desc: 'Itemizado completo generado por IA, estructurado y editable.' },
-            { icon: BarChart3,     title: 'APU',          desc: 'Precios unitarios con rendimientos y costos actualizados.' },
-            { icon: CheckCircle2,  title: 'Presupuesto',  desc: 'Consolidado, revisable y exportable para tu equipo.' },
-            { icon: CalendarRange, title: 'Programación', desc: 'Planificación inicial automática alineada al presupuesto.' },
-          ].map((step, i) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="relative bg-card/70 border border-white/5 border-l-2 border-l-cyanGlow rounded-2xl p-6 backdrop-blur-xl hover:border-cyanGlow/30 hover:bg-cyanGlow/5 transition-all duration-500 overflow-hidden flex flex-col"
-            >
-              {/* Flecha de flujo — aparece a la derecha de cada card excepto la última */}
-              {i < 5 && (
-                <span
-                  className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-lg font-bold select-none"
-                  style={{ color: '#D4AF37' }}
-                >
-                  ›
-                </span>
-              )}
-
-              {/* Número grande gris de fondo */}
-              <span className="absolute right-3 top-3 text-6xl font-bold text-white/5 leading-none select-none">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-
-              {/* Icono + etiqueta PASO */}
-              <div className="flex items-center gap-2 mb-5">
-                <step.icon className="text-cyanGlow" size={20} />
-                <span className="text-xs tracking-widest uppercase font-bold" style={{ color: '#D4AF37' }}>
-                  — Paso {String(i + 1).padStart(2, '0')}
-                </span>
-              </div>
-
-              <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
-            </motion.div>
-          ))}
-        </div>
       </section>
 
       {/* STATS BAR */}
