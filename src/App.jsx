@@ -442,7 +442,7 @@ function App() {
                 viewport={{ once: true }}
                 className="bg-card/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-cyanGlow/20 transition-all duration-500"
               >
-                <img src={t.logo} alt={t.logoAlt} className="h-7 object-contain mb-6 opacity-70" style={{ filter: 'grayscale(100%) brightness(5)' }} />
+                <img src={t.logo} alt={t.logoAlt} className="h-10 object-contain mb-6 opacity-70" style={{ filter: 'grayscale(100%) brightness(5)' }} />
                 <p className="text-gray-200 leading-relaxed mb-8 text-lg">"{t.quote}"</p>
                 <div className="flex items-center gap-3">
                   <img
@@ -463,24 +463,38 @@ function App() {
 
       {/* LOGO CLOUD */}
       <section className="py-16 border-t border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
-            Constructoras pioneras en programa beta
-          </p>
-          <div className="flex items-center justify-center gap-10 flex-wrap">
-            {[
+        <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
+          Constructoras pioneras en programa beta
+        </p>
+
+        <style>{`
+          @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            animation: marquee 28s linear infinite;
+          }
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+
+        <div className="max-w-7xl mx-auto px-6 overflow-hidden">
+          <div className="marquee-track flex items-center gap-14 w-max">
+            {[...Array(2)].flatMap(() => [
               { src: '/logos/logo-fuemin.png',  alt: 'FUEMIN' },
               { src: '/logos/logo-abf.png',     alt: 'ABF Constructora' },
               { src: '/logos/logo-ryv.png',     alt: 'R&V Constructora' },
               { src: '/logos/logo-la27.png',    alt: 'LA 27 Ingeniería' },
               { src: '/logos/logo-rrs.png',     alt: 'RRS Ingeniería' },
               { src: '/logos/logo-incocim.png', alt: 'INCOCIM Group' },
-            ].map((logo, i) => (
+            ]).map((logo, i) => (
               <img
                 key={i}
                 src={logo.src}
                 alt={logo.alt}
-                className="h-12 md:h-14 object-contain transition-all duration-300"
+                className="h-12 md:h-14 object-contain shrink-0 transition-all duration-300"
                 style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.55 }}
                 onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
                 onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.55'; }}
