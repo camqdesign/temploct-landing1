@@ -120,6 +120,7 @@ function App() {
           <div className="hidden md:flex gap-8 text-sm text-gray-300">
             <a href="#features" className="hover:text-cyanGlow transition">Producto</a>
             <a href="#workflow" className="hover:text-cyanGlow transition">Cómo funciona</a>
+            <a href="#plataforma" className="hover:text-cyanGlow transition">La plataforma</a>
             <a href="#faq" className="hover:text-cyanGlow transition">FAQ</a>
           </div>
 
@@ -446,7 +447,7 @@ function App() {
       </div>
 
       {/* HOW IT WORKS */}
-      <section className="relative z-10">
+      <section id="plataforma" className="relative z-10 scroll-mt-20">
 
         {/* Barra superior — contador de paso + título + segmentos de progreso */}
         <div className="border-y border-white/5 bg-[#0c1829]/60 backdrop-blur-xl px-6 py-4">
@@ -475,25 +476,27 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid lg:grid-cols-[2fr_3fr] gap-12 items-center">
 
           {/* Columna izquierda — texto */}
-          <motion.div
-            key={`text-${workflowStep}`}
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            className="border-l-2 border-cyanGlow pl-8"
-          >
-            <span className="text-sm font-bold tracking-widest uppercase mb-6 block" style={{ color: '#D4AF37' }}>
-              — PASO {String(workflowStep + 1).padStart(2, '0')}
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-bold leading-[1.08] tracking-tight text-white mb-6">
-              {etapas[workflowStep].title}
-            </h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              {etapas[workflowStep].desc}
-            </p>
+          {/* Columna texto — flex-col con altura mínima fija para que botones no se muevan */}
+          <div className="border-l-2 border-cyanGlow pl-8 flex flex-col" style={{ minHeight: '420px' }}>
+            <motion.div
+              key={`text-${workflowStep}`}
+              initial={{ opacity: 0, x: -24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <span className="text-sm font-bold tracking-widest uppercase mb-6 block" style={{ color: '#D4AF37' }}>
+                — PASO {String(workflowStep + 1).padStart(2, '0')}
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-bold leading-[1.08] tracking-tight text-white mb-6">
+                {etapas[workflowStep].title}
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed">
+                {etapas[workflowStep].desc}
+              </p>
+            </motion.div>
 
-            {/* Botones de navegación entre pasos */}
-            <div className="flex items-center gap-4 mt-10">
+            {/* Botones fijos al fondo — mt-auto los empuja siempre a la misma altura */}
+            <div className="flex items-center gap-4 mt-auto pt-10">
               <button
                 onClick={() => setWorkflowStep(prev => Math.max(0, prev - 1))}
                 disabled={workflowStep === 0}
@@ -511,7 +514,7 @@ function App() {
                 Siguiente →
               </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Columna derecha — screenshot */}
           <motion.div
