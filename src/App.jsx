@@ -321,6 +321,41 @@ function App() {
         </div>
       </section>
 
+      {/* CONOCE A ATLAS */}
+      <section className="px-6 py-28 relative z-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Columna izquierda */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-6">
+              <span className="text-blue-500 text-base leading-none">●</span>
+              Conoce a Atlas
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-white">
+              La inteligencia que vive dentro de Temploct.
+            </h2>
+          </motion.div>
+
+          {/* Columna derecha */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+              Dentro de Temploct vive <strong className="text-white">Atlas</strong> — el orquestador que coordina agentes especializados en cada etapa del análisis. No es robótico. Es un partner que entiende el rubro: lee como un jefe de estudio, pregunta como uno y respeta tu criterio como tal.
+            </p>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* STATS BAR */}
       <section className="px-6 py-24 relative z-10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
