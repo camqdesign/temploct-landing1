@@ -352,8 +352,8 @@ function App() {
         </div>
       </section>
 
-      {/* CONOCE A ATLAS */}
-      <section className="px-6 pt-16 pb-10 relative z-10">
+      {/* CONOCE A ATLAS — ancla del menú "Cómo funciona" */}
+      <section id="workflow" className="px-6 pt-28 pb-20 relative z-10 scroll-mt-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Columna izquierda */}
@@ -388,7 +388,7 @@ function App() {
       </section>
 
       {/* CARDS DE FLUJO */}
-      <section className="pt-4 pb-10 px-6">
+      <section className="pt-6 pb-14 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-7 gap-3">
           {[
             { icon: FileText,      title: 'Documentos',   desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.' },
@@ -438,7 +438,7 @@ function App() {
       </section>
 
       {/* Subtítulo del flujo */}
-      <div className="max-w-5xl mx-auto px-6 pb-10 text-center">
+      <div className="max-w-5xl mx-auto px-6 pt-2 pb-16 text-center">
         <p className="text-base text-gray-500">
           <strong style={{ color: '#D4AF37' }}>Siete etapas</strong> que tu equipo hace manualmente en días.{' '}
           <strong style={{ color: '#D4AF37' }}>Temploct</strong> las resuelve en horas con precisión técnica.
@@ -446,7 +446,7 @@ function App() {
       </div>
 
       {/* HOW IT WORKS */}
-      <section id="workflow" className="relative z-10">
+      <section className="relative z-10">
 
         {/* Barra superior — contador de paso + título + segmentos de progreso */}
         <div className="border-y border-white/5 bg-[#0c1829]/60 backdrop-blur-xl px-6 py-4">
@@ -472,7 +472,7 @@ function App() {
         </div>
 
         {/* Contenido principal */}
-        <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Columna izquierda — texto */}
           <motion.div
@@ -543,15 +543,12 @@ function App() {
 
         </div>
 
-      </section>
-
-      {/* STATS BAR */}
-      <section className="px-6 pt-10 pb-16 relative z-10">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        {/* Stats — parte del mismo bloque "Cómo funciona" */}
+        <div className="max-w-4xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-t border-white/5 pt-12">
           {[
             { value: '-68%', label: 'Reducción promedio en tiempo de revisión técnica' },
-            { value: '3×', label: 'Más licitaciones evaluadas por el mismo equipo' },
-            { value: '96%', label: 'Precisión en detección de inconsistencias' },
+            { value: '3×',   label: 'Más licitaciones evaluadas por el mismo equipo' },
+            { value: '96%',  label: 'Precisión en detección de inconsistencias' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -560,11 +557,14 @@ function App() {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className={`font-bold text-cyanGlow mb-3 ${stat.value.length > 5 ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'}`}>{stat.value}</div>
+              <div className={`font-bold text-cyanGlow mb-3 ${stat.value.length > 5 ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'}`}>
+                {stat.value}
+              </div>
               <div className="text-gray-400 text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </div>
+
       </section>
 
       {/* TESTIMONIALS */}
