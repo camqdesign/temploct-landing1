@@ -356,28 +356,6 @@ function App() {
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <section className="px-6 py-24 relative z-10">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {[
-            { value: '-68%', label: 'Reducción promedio en tiempo de revisión técnica' },
-            { value: '3×', label: 'Más licitaciones evaluadas por el mismo equipo' },
-            { value: '96%', label: 'Precisión en detección de inconsistencias' },
-          ].map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className={`font-bold text-cyanGlow mb-3 ${stat.value.length > 5 ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'}`}>{stat.value}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* HOW IT WORKS */}
       <section id="workflow" className="py-32 px-6">
         <div className="max-w-5xl mx-auto text-center mb-16">
@@ -417,6 +395,28 @@ function App() {
 
               <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* STATS BAR */}
+      <section className="px-6 py-24 relative z-10">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {[
+            { value: '-68%', label: 'Reducción promedio en tiempo de revisión técnica' },
+            { value: '3×', label: 'Más licitaciones evaluadas por el mismo equipo' },
+            { value: '96%', label: 'Precisión en detección de inconsistencias' },
+          ].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className={`font-bold text-cyanGlow mb-3 ${stat.value.length > 5 ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'}`}>{stat.value}</div>
+              <div className="text-gray-400 text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </div>
