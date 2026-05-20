@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
@@ -28,6 +28,25 @@ function App() {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [formEmail, setFormEmail] = useState('')
+
+  const marqueeRef = useRef(null)
+  const [logoContainerWidth, setLogoContainerWidth] = useState(null)
+
+  useEffect(() => {
+    if (marqueeRef.current) {
+      // El track tiene 12 logos (6 × 2). La mitad = ancho de los 6 originales
+      setLogoContainerWidth(marqueeRef.current.scrollWidth / 2)
+    }
+  }, [])
+
+  const cloudLogos = [
+    { src: '/logos/logo-fuemin.png',  alt: 'FUEMIN' },
+    { src: '/logos/logo-abf.png',     alt: 'ABF Constructora' },
+    { src: '/logos/logo-ryv.png',     alt: 'R&V Constructora' },
+    { src: '/logos/logo-la27.png',    alt: 'LA 27 Ingeniería' },
+    { src: '/logos/logo-rrs.png',     alt: 'RRS Ingeniería' },
+    { src: '/logos/logo-incocim.png', alt: 'INCOCIM Group' },
+  ]
 
   const openCalendly = () => setIsCalendlyOpen(true)
   const openVideo = () => setIsVideoOpen(true)
@@ -475,31 +494,44 @@ function App() {
           .marquee-track {
             animation: marquee 28s linear infinite;
           }
-          .marquee-track:hover {
-            animation-play-state: paused;
-          }
         `}</style>
 
-        <div className="max-w-7xl mx-auto px-6 overflow-hidden">
-          <div className="marquee-track flex items-center gap-14 w-max">
-            {[...Array(2)].flatMap(() => [
-              { src: '/logos/logo-fuemin.png',  alt: 'FUEMIN' },
-              { src: '/logos/logo-abf.png',     alt: 'ABF Constructora' },
-              { src: '/logos/logo-ryv.png',     alt: 'R&V Constructora' },
-              { src: '/logos/logo-la27.png',    alt: 'LA 27 Ingeniería' },
-              { src: '/logos/logo-rrs.png',     alt: 'RRS Ingeniería' },
-              { src: '/logos/logo-incocim.png', alt: 'INCOCIM Group' },
-            ]).map((logo, i) => (
-              <img
-                key={i}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-12 md:h-14 object-contain shrink-0 transition-all duration-300"
-                style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.55 }}
-                onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
-                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.55'; }}
+        {/* Contenedor con ancho exacto de los 6 logos, centrado */}
+        <div
+          className="mx-auto overflow-hidden relative"
+          style={{
+            width: logoContainerWidth ? `${logoContainerWidth}px` : 'max-content',
+            maxWidth: '100%',
+            /* mask-image: degrada los bordes para que los logos aparezcan y desaparezcan suavemente */
+            maskImage: 'linear-gradient(to right, transparent, black 18%, black 82%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 18%, black 82%, transparent)',
+          }}
+        >
+          {/* Capa base — logos en blanco/gris */}
+          <div ref={marqueeRef} className="marquee-track flex items-center gap-14 w-max">
+            {[...Array(2)].flatMap(() => cloudLogos).map((logo, i) => (
+              <img key={`g${i}`} src={logo.src} alt={logo.alt}
+                className="h-12 md:h-14 object-contain shrink-0"
+                style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.45 }}
               />
             ))}
+          </div>
+
+          {/* Capa color — misma animación, solo visible en el centro */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent 28%, black 42%, black 58%, transparent 72%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 28%, black 42%, black 58%, transparent 72%)',
+            }}
+          >
+            <div className="marquee-track flex items-center gap-14 w-max">
+              {[...Array(2)].flatMap(() => cloudLogos).map((logo, i) => (
+                <img key={`c${i}`} src={logo.src} alt={logo.alt}
+                  className="h-12 md:h-14 object-contain shrink-0"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
