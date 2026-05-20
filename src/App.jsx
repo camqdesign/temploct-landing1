@@ -83,80 +83,75 @@ function App() {
       </nav>
 
       {/* HERO */}
-      <section id="features" className="relative pt-40 pb-0 px-6 overflow-hidden">
+      <section id="features" className="relative pt-36 pb-0 px-6 overflow-hidden">
 
-        {/* Imagen de fondo — pantalla Diagnóstico del SaaS */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src="/mockup-diagnostico.svg"
-            alt=""
-            className="w-full h-full object-cover object-top opacity-40"
-          />
-          {/* Oscurecimiento central — radial: más oscuro en el centro donde está el texto */}
-          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(8,15,30,0.92) 0%, rgba(8,15,30,0.7) 50%, rgba(8,15,30,0.3) 100%)'}} />
-          {/* Oscurecimiento en bordes top/bottom */}
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #080f1e 0%, transparent 12%, transparent 75%, #080f1e 100%)'}} />
-        </div>
-
-        {/* Glow de fondo */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-cyanGlow/5 blur-[200px] rounded-full pointer-events-none" />
+        {/* Luz central difusa — efecto de la referencia */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 40%, transparent 70%)' }} />
 
         {/* Texto hero — centrado */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center relative z-10 mb-14"
+          className="max-w-4xl mx-auto text-center relative z-10 mb-16"
         >
-          <div className="inline-flex items-center gap-2 border border-cyanGlow/20 bg-cyanGlow/10 rounded-full px-4 py-2 text-sm text-cyanGlow mb-8">
-            <BrainCircuit size={16} />
-            Sistema de análisis y control Inteligente
+          {/* Etiqueta superior */}
+          <div className="flex items-center justify-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-8">
+            <span className="text-cyanGlow text-base leading-none">●</span>
+            Temploct AIP · Para constructoras, inmobiliarias y profesionales del rubro
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.08] font-bold mb-7 tracking-tight">
-            Reduce el tiempo de análisis técnico y acepta más proyectos o licitaciones.
+          {/* H1 con "análisis" destacado en cian */}
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.08] font-bold mb-8 tracking-tight">
+            Tu sistema integral de{' '}
+            <span style={{ color: '#22d3ee' }}>análisis</span>
+            , estudio<br />y control de proyectos.
           </h1>
 
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Sube los antecedentes del proyecto y un grupo de asistentes de IA hará el análisis técnico y planificación de la obra con mayor precisión y control.
+            Analiza propuestas con más seguridad. Valoriza con fundamentos claros. Programa y controla la ejecución de forma ordenada. Todo en un mismo sistema — sin salir a buscar otras herramientas.
           </p>
 
-          {/* Botones en amarillo Temploct */}
-          <div className="flex flex-wrap gap-4 justify-center">
+          {/* Botones */}
+          <div className="flex flex-wrap gap-4 justify-center mb-6">
             <button
               onClick={openCalendly}
-              className="bg-cyanGlow text-black px-7 py-4 rounded-2xl font-semibold flex items-center gap-2 hover:shadow-glow transition-all duration-300"
+              className="bg-cyanGlow text-black px-8 py-4 rounded-2xl font-semibold flex items-center gap-2 hover:shadow-glow transition-all duration-300"
             >
-              Agendar demo
+              Quiero conocer Temploct
               <ArrowRight size={18} />
             </button>
             <button
               onClick={openVideo}
-              className="px-7 py-4 rounded-2xl font-semibold flex items-center gap-2 transition-all duration-300"
-              style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'rgba(212,175,55,0.08)', color: '#D4AF37' }}
+              className="px-7 py-4 rounded-2xl font-semibold flex items-center gap-2 transition-all duration-300 border border-white/10 bg-white/5 text-white hover:border-cyanGlow/40"
             >
               <Play size={18} />
               Ver video
             </button>
           </div>
+
+          {/* Texto pequeño bajo botones */}
+          <p className="text-xs text-gray-600 uppercase tracking-[0.18em]">
+            Acceso controlado · Hecho en Chile, por constructores
+          </p>
         </motion.div>
 
-        {/* Mockup app — ventana flotante debajo del texto, estilo Linear */}
+        {/* Mockup app — ventana flotante debajo del texto */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          {/* Glow detrás del mockup */}
+          {/* Glow cian detrás del mockup */}
           <div className="absolute -inset-4 bg-cyanGlow/10 blur-3xl rounded-3xl pointer-events-none" />
 
-          {/* Ventana del mockup con barra superior simulando un browser/app */}
+          {/* Ventana del mockup */}
           <div
             className="relative rounded-t-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 0 80px rgba(34,211,238,0.12), 0 40px 80px rgba(0,0,0,0.6)' }}
+            style={{ border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 0 80px rgba(34,211,238,0.15), 0 40px 80px rgba(0,0,0,0.6)' }}
           >
-            {/* Barra superior tipo app (traffic lights) */}
+            {/* Barra superior tipo app */}
             <div className="bg-[#0c1829] px-4 py-3 flex items-center gap-2 border-b border-white/5">
               <div className="w-3 h-3 rounded-full bg-white/10" />
               <div className="w-3 h-3 rounded-full bg-white/10" />
@@ -164,17 +159,17 @@ function App() {
               <div className="flex-1 mx-4 bg-white/5 rounded-md h-5" />
             </div>
 
-            {/* Imagen del mockup */}
+            {/* Imagen del mockup — reemplazar con captura real en public/showcase.png */}
             <img
-              src="/mockup.svg"
+              src="/showcase.png"
               alt="Dashboard de Temploct — análisis técnico y presupuesto de construcción"
               className="w-full h-auto block"
             />
 
-            {/* Gradiente que desvanece la parte inferior del mockup */}
+            {/* Gradiente que desvanece la parte inferior */}
             <div
               className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
-              style={{ background: 'linear-gradient(to bottom, transparent, #080f1e)' }}
+              style={{ background: 'linear-gradient(to bottom, transparent, #0B1020)' }}
             />
           </div>
         </motion.div>
