@@ -471,8 +471,8 @@ function App() {
           </div>
         </div>
 
-        {/* Contenido principal */}
-        <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid lg:grid-cols-2 gap-16 items-center">
+        {/* Contenido principal — columnas: 2fr texto · 3fr imagen */}
+        <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid lg:grid-cols-[2fr_3fr] gap-12 items-center">
 
           {/* Columna izquierda — texto */}
           <motion.div
@@ -482,7 +482,7 @@ function App() {
             transition={{ duration: 0.4 }}
             className="border-l-2 border-cyanGlow pl-8"
           >
-            <span className="text-sm font-bold tracking-widest uppercase mb-6 block" style={{ color: '#22d3ee' }}>
+            <span className="text-sm font-bold tracking-widest uppercase mb-6 block" style={{ color: '#D4AF37' }}>
               — PASO {String(workflowStep + 1).padStart(2, '0')}
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold leading-[1.08] tracking-tight text-white mb-6">
@@ -497,14 +497,16 @@ function App() {
               <button
                 onClick={() => setWorkflowStep(prev => Math.max(0, prev - 1))}
                 disabled={workflowStep === 0}
-                className="px-5 py-2.5 rounded-xl border border-white/10 text-sm font-medium transition-all duration-300 disabled:opacity-25 hover:border-cyanGlow/40"
+                className="px-5 py-2.5 rounded-xl border text-sm font-medium transition-all duration-300 disabled:opacity-25"
+                style={{ borderColor: 'rgba(212,175,55,0.3)', color: '#D4AF37' }}
               >
                 ← Anterior
               </button>
               <button
                 onClick={() => setWorkflowStep(prev => Math.min(6, prev + 1))}
                 disabled={workflowStep === 6}
-                className="px-5 py-2.5 rounded-xl bg-cyanGlow/10 border border-cyanGlow/30 text-cyanGlow text-sm font-medium transition-all duration-300 disabled:opacity-25 hover:bg-cyanGlow/20"
+                className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 disabled:opacity-25"
+                style={{ background: 'rgba(212,175,55,0.12)', border: '1px solid rgba(212,175,55,0.4)', color: '#D4AF37' }}
               >
                 Siguiente →
               </button>
