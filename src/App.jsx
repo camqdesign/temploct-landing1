@@ -438,8 +438,8 @@ function App() {
         </div>
       </section>
 
-      {/* Subtítulo del flujo */}
-      <div className="max-w-5xl mx-auto px-6 pt-2 pb-16 text-center">
+      {/* Subtítulo del flujo — ancla "La plataforma" del menú */}
+      <div id="plataforma" className="max-w-5xl mx-auto px-6 pt-2 pb-16 text-center scroll-mt-20">
         <p className="text-base text-gray-500">
           <strong style={{ color: '#D4AF37' }}>Siete etapas</strong> que tu equipo hace manualmente en días.{' '}
           <strong style={{ color: '#D4AF37' }}>Temploct</strong> las resuelve en horas con precisión técnica.
@@ -447,7 +447,7 @@ function App() {
       </div>
 
       {/* HOW IT WORKS */}
-      <section id="plataforma" className="relative z-10 scroll-mt-20">
+      <section className="relative z-10">
 
         {/* Barra superior — contador de paso + título + segmentos de progreso */}
         <div className="border-y border-white/5 bg-[#0c1829]/60 backdrop-blur-xl px-6 py-4">
