@@ -412,20 +412,26 @@ function App() {
               {
                 quote: "Antes pasábamos dos semanas revisando antecedentes técnicos de una licitación. Con Temploct lo resolvemos en menos de un día.",
                 name: "María Pérez",
-                role: "Jefa de Estudios — Constructora Norte",
-                avatar: "https://i.pravatar.cc/88?img=47"
+                role: "Jefa de Estudios — ABF Constructora",
+                avatar: "https://i.pravatar.cc/88?img=47",
+                logo: "/logos/logo-abf.png",
+                logoAlt: "ABF Constructora"
               },
               {
                 quote: "Detectamos inconsistencias entre arquitectura y estructura que antes solo aparecían en obra. Eso nos ahorra cifras de seis dígitos por proyecto.",
                 name: "Diego Salinas",
-                role: "Project Manager — Andes Ingeniería",
-                avatar: "https://i.pravatar.cc/88?img=12"
+                role: "Project Manager — Incocim Group",
+                avatar: "https://i.pravatar.cc/88?img=12",
+                logo: "/logos/logo-incocim.png",
+                logoAlt: "Incocim Group"
               },
               {
                 quote: "Pudimos triplicar la cantidad de licitaciones que evaluamos al mes sin contratar a nadie nuevo. Es una diferencia operativa enorme.",
                 name: "Carolina Vega",
-                role: "Gerente Técnica — Grupo Pacífico",
-                avatar: "https://i.pravatar.cc/88?img=49"
+                role: "Gerente Técnica — Fuemin",
+                avatar: "https://i.pravatar.cc/88?img=49",
+                logo: "/logos/logo-fuemin.png",
+                logoAlt: "Fuemin"
               }
             ].map((t, i) => (
               <motion.div
@@ -436,7 +442,7 @@ function App() {
                 viewport={{ once: true }}
                 className="bg-card/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-cyanGlow/20 transition-all duration-500"
               >
-                <img src="/logo.png" alt="Temploct" className="w-8 h-8 object-contain mb-6 opacity-80" />
+                <img src={t.logo} alt={t.logoAlt} className="h-7 object-contain mb-6 opacity-70" style={{ filter: 'grayscale(100%) brightness(5)' }} />
                 <p className="text-gray-200 leading-relaxed mb-8 text-lg">"{t.quote}"</p>
                 <div className="flex items-center gap-3">
                   <img
