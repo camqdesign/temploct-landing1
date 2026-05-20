@@ -13,7 +13,8 @@ import {
   Check,
   ChevronDown,
   Play,
-  Sparkles
+  Sparkles,
+  Layers
 } from 'lucide-react'
 
 // =========================================================
@@ -47,23 +48,23 @@ function App() {
       img: '/etapas/ss-03.png'
     },
     {
+      title: 'Cubicación automatizada desde planos y especificaciones',
+      desc: 'Atlas extrae y calcula las cantidades de obra directamente desde los documentos del proyecto. Menos horas frente a planos, más tiempo revisando lo que importa.',
+      img: '/etapas/ss-04.png'
+    },
+    {
       title: 'Análisis de precios unitarios con rendimientos reales',
       desc: 'Cada partida se valoriza con APUs construidos desde tu biblioteca de precios y rendimientos. Se actualiza en base a zona, tipo de obra y datos de mercado.',
-      img: '/etapas/ss-04.png'
+      img: '/etapas/ss-05.png'
     },
     {
       title: 'Presupuesto consolidado listo para presentar',
       desc: 'El presupuesto se genera automáticamente a partir del itemizado y los APUs. Revisable, exportable y con trazabilidad completa de cada número.',
-      img: '/etapas/ss-05.png'
+      img: '/etapas/ss-06.png'
     },
     {
       title: 'Programación de obra alineada al presupuesto',
       desc: 'Genera la planificación inicial del proyecto directamente desde las partidas y plazos definidos. Una carta Gantt base que puedes ajustar con tu equipo.',
-      img: '/etapas/ss-06.png'
-    },
-    {
-      title: 'Control y seguimiento de ejecución en obra',
-      desc: 'Registra el avance real del proyecto y compáralo con lo planificado. Detecta desviaciones de costo y plazo a tiempo para tomar decisiones con información.',
       img: '/etapas/ss-07.png'
     },
   ]
@@ -383,6 +384,56 @@ function App() {
             </p>
           </motion.div>
 
+        </div>
+      </section>
+
+      {/* CARDS DE FLUJO */}
+      <section className="pt-4 pb-10 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-7 gap-3">
+          {[
+            { icon: FileText,      title: 'Documentos',   desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.' },
+            { icon: ShieldAlert,   title: 'Diagnóstico',  desc: 'Detecta inconsistencias entre documentos antes de comprometerte.' },
+            { icon: Building2,     title: 'Partidas',     desc: 'Itemizado completo generado por IA, estructurado y editable.' },
+            { icon: Layers,        title: 'Cubicación',   desc: 'Cantidades de obra extraídas automáticamente desde los planos.' },
+            { icon: BarChart3,     title: 'APU',          desc: 'Precios unitarios con rendimientos y costos actualizados.' },
+            { icon: CheckCircle2,  title: 'Presupuesto',  desc: 'Consolidado, revisable y exportable para tu equipo.' },
+            { icon: CalendarRange, title: 'Programación', desc: 'Planificación inicial automática alineada al presupuesto.' },
+          ].map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08 }}
+              viewport={{ once: true }}
+              className="relative bg-card/70 border border-white/5 border-l-2 border-l-cyanGlow rounded-2xl p-5 backdrop-blur-xl hover:border-cyanGlow/30 hover:bg-cyanGlow/5 transition-all duration-500 overflow-hidden flex flex-col"
+            >
+              {/* Flecha entre cards */}
+              {i < 6 && (
+                <span
+                  className="hidden lg:block absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-base font-bold select-none"
+                  style={{ color: '#D4AF37' }}
+                >
+                  ›
+                </span>
+              )}
+
+              {/* Número grande de fondo */}
+              <span className="absolute right-2 top-2 text-5xl font-bold text-white/5 leading-none select-none">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+
+              {/* Ícono + etiqueta PASO */}
+              <div className="flex items-center gap-2 mb-4">
+                <step.icon className="text-cyanGlow shrink-0" size={18} />
+                <span className="text-xs tracking-widest uppercase font-bold" style={{ color: '#D4AF37' }}>
+                  — Paso {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
+
+              <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+              <p className="text-gray-400 text-xs leading-relaxed">{step.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
