@@ -437,6 +437,14 @@ function App() {
         </div>
       </section>
 
+      {/* Subtítulo del flujo */}
+      <div className="max-w-5xl mx-auto px-6 pb-10 text-center">
+        <p className="text-base text-gray-500">
+          <strong style={{ color: '#D4AF37' }}>Siete etapas</strong> que tu equipo hace manualmente en días.{' '}
+          <strong style={{ color: '#D4AF37' }}>Temploct</strong> las resuelve en horas con precisión técnica.
+        </p>
+      </div>
+
       {/* HOW IT WORKS */}
       <section id="workflow" className="relative z-10">
 
@@ -533,14 +541,6 @@ function App() {
             </div>
           </motion.div>
 
-        </div>
-
-        {/* Subtítulo debajo — visible en móvil también */}
-        <div className="max-w-5xl mx-auto px-6 pb-10 text-center -mt-6">
-          <p className="text-base text-gray-500">
-            <strong style={{ color: '#D4AF37' }}>Siete etapas</strong> que tu equipo hace manualmente en días.{' '}
-            <strong style={{ color: '#D4AF37' }}>Temploct</strong> las resuelve en horas con precisión técnica.
-          </p>
         </div>
 
       </section>
