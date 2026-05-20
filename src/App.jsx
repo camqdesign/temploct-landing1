@@ -176,34 +176,6 @@ function App() {
 
       </section>
 
-      {/* LOGO CLOUD */}
-      <section className="px-6 py-16 border-y border-white/5 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
-            Constructoras pioneras en programa beta
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-            {[
-              { src: '/logos/logo-fuemin.png',   alt: 'Fuemin' },
-              { src: '/logos/logo-abf.png',      alt: 'ABF Constructora' },
-              { src: '/logos/logo-ryv.png',      alt: 'R&V Constructora' },
-              { src: '/logos/logo-la27.png',     alt: 'LA 27 Ingeniería' },
-              { src: '/logos/logo-rrs.png',      alt: 'RRS Ingeniería' },
-              { src: '/logos/logo-incocim.png',  alt: 'Incocim Group' },
-            ].map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-16 md:h-20 object-contain transition-all duration-300"
-                style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.6 }}
-                onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
-                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.6'; }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* EL PROBLEMA */}
       <section className="px-6 py-28 relative z-10">
@@ -423,7 +395,7 @@ function App() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-32 px-6">
+      <section className="pt-32 pb-0 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-cyanGlow text-sm tracking-widest uppercase">Programa Beta</span>
@@ -464,7 +436,7 @@ function App() {
                 viewport={{ once: true }}
                 className="bg-card/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-cyanGlow/20 transition-all duration-500"
               >
-                <Sparkles className="text-cyanGlow mb-6" size={20} />
+                <img src="/logo.png" alt="Temploct" className="w-8 h-8 object-contain mb-6 opacity-80" />
                 <p className="text-gray-200 leading-relaxed mb-8 text-lg">"{t.quote}"</p>
                 <div className="flex items-center gap-3">
                   <img
@@ -478,6 +450,50 @@ function App() {
                   </div>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOGO CLOUD — con marquee scroll infinito */}
+      <section className="py-16 border-t border-white/5 relative z-10 overflow-hidden">
+        <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
+          Constructoras pioneras en programa beta
+        </p>
+
+        {/* CSS para la animación marquee */}
+        <style>{`
+          @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            animation: marquee 28s linear infinite;
+          }
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+
+        <div className="overflow-hidden">
+          <div className="marquee-track flex items-center gap-16 w-max">
+            {[...Array(2)].flatMap(() => [
+              { src: '/logos/logo-fuemin.png',  alt: 'Fuemin' },
+              { src: '/logos/logo-abf.png',     alt: 'ABF Constructora' },
+              { src: '/logos/logo-ryv.png',     alt: 'R&V Constructora' },
+              { src: '/logos/logo-la27.png',    alt: 'LA 27 Ingeniería' },
+              { src: '/logos/logo-rrs.png',     alt: 'RRS Ingeniería' },
+              { src: '/logos/logo-incocim.png', alt: 'Incocim Group' },
+            ]).map((logo, i) => (
+              <img
+                key={i}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-14 md:h-16 object-contain shrink-0 transition-all duration-300"
+                style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.55 }}
+                onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
+                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.55'; }}
+              />
             ))}
           </div>
         </div>
