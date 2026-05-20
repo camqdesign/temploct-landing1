@@ -322,7 +322,7 @@ function App() {
       </section>
 
       {/* CONOCE A ATLAS */}
-      <section className="px-6 py-28 relative z-10">
+      <section className="px-6 pt-16 pb-10 relative z-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Columna izquierda */}
@@ -357,7 +357,7 @@ function App() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="workflow" className="py-32 px-6">
+      <section id="workflow" className="pt-10 pb-10 px-6">
         <div className="max-w-5xl mx-auto text-center mb-16">
           <p className="text-xl text-gray-400 leading-relaxed">
             Seis etapas automatizadas que tu equipo hoy hace manualmente en días.<br />
@@ -401,7 +401,7 @@ function App() {
       </section>
 
       {/* STATS BAR */}
-      <section className="px-6 py-24 relative z-10">
+      <section className="px-6 pt-10 pb-16 relative z-10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[
             { value: '-68%', label: 'Reducción promedio en tiempo de revisión técnica' },
