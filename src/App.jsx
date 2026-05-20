@@ -250,6 +250,77 @@ function App() {
         </div>
       </section>
 
+      {/* QUÉ ES Y QUÉ NO */}
+      <section className="px-6 py-28 relative z-10">
+        <div className="max-w-5xl mx-auto">
+
+          {/* Header */}
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-6">
+              <span className="text-blue-500 text-base leading-none">●</span>
+              Qué es Temploct, y qué no
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+              Sin promesas vacías. Lo decimos claro.
+            </h2>
+          </div>
+
+          {/* Dos columnas */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 rounded-2xl overflow-hidden border border-white/5"
+          >
+            {/* NO ES */}
+            <div className="bg-[#0d1628] p-10">
+              <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.18em] mb-8">
+                <span className="text-gray-500 font-bold">✕</span>
+                No es
+              </div>
+              <ul className="space-y-5">
+                {[
+                  'No genera presupuestos en 2 minutos.',
+                  'No reemplaza tu criterio ni tu experiencia.',
+                  'No hace el trabajo por ti.',
+                  'No es una herramienta compleja que tendrás que aprender antes de usar.',
+                  'No es otro sistema genérico de gestión.',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4 text-gray-400 text-sm md:text-base border-t border-white/5 pt-5 first:border-0 first:pt-0">
+                    <span className="text-gray-600 mt-1 shrink-0">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* SÍ ES */}
+            <div className="bg-[#0f1c35] p-10 border-l border-white/5">
+              <div className="flex items-center gap-2 text-xs text-cyanGlow uppercase tracking-[0.18em] mb-8">
+                <span className="font-bold">✓</span>
+                Sí es
+              </div>
+              <ul className="space-y-5">
+                {[
+                  <span>Un sistema que <strong className="text-white">analiza los antecedentes del proyecto junto a ti.</strong></span>,
+                  <span>Una herramienta que te acompaña <strong className="text-white">de principio a fin de cada obra.</strong></span>,
+                  <span>Un sistema vivo que <strong className="text-white">aprende de cada proyecto</strong> que estudias.</span>,
+                  <span>Tu <strong className="text-white">biblioteca de precios, rendimientos y decisiones</strong> — disponible en cada nuevo proyecto.</span>,
+                  <span>El criterio siempre tuyo. La eficiencia, <strong className="text-white">amplificada.</strong></span>,
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4 text-gray-400 text-sm md:text-base border-t border-white/5 pt-5 first:border-0 first:pt-0">
+                    <span className="text-cyanGlow mt-1 shrink-0">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* STATS BAR */}
       <section className="px-6 py-24 relative z-10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
