@@ -406,12 +406,12 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
               viewport={{ once: true }}
-              className="relative bg-card/70 border border-white/5 border-l-2 border-l-cyanGlow rounded-2xl p-5 backdrop-blur-xl hover:border-cyanGlow/30 hover:bg-cyanGlow/5 transition-all duration-500 overflow-hidden flex flex-col"
+              className="relative bg-card/70 border border-white/5 border-l-2 border-l-cyanGlow rounded-2xl p-5 backdrop-blur-xl hover:border-cyanGlow/30 hover:bg-cyanGlow/5 transition-all duration-500 flex flex-col"
             >
-              {/* Flecha entre cards */}
+              {/* Flecha de flujo entre cards */}
               {i < 6 && (
                 <span
-                  className="hidden lg:block absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-base font-bold select-none"
+                  className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-20 text-xl font-bold select-none drop-shadow-md"
                   style={{ color: '#D4AF37' }}
                 >
                   ›
