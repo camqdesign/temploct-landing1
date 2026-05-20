@@ -496,15 +496,15 @@ function App() {
           }
         `}</style>
 
-        {/* Contenedor con ancho exacto de los 6 logos, centrado */}
+        {/* Contenedor más ancho que los 6 logos para que el fade no los tape */}
         <div
           className="mx-auto overflow-hidden relative"
           style={{
-            width: logoContainerWidth ? `${logoContainerWidth}px` : 'max-content',
+            width: logoContainerWidth ? `${logoContainerWidth * 1.35}px` : 'max-content',
             maxWidth: '100%',
-            /* mask-image: degrada los bordes para que los logos aparezcan y desaparezcan suavemente */
-            maskImage: 'linear-gradient(to right, transparent, black 18%, black 82%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 18%, black 82%, transparent)',
+            /* mask-image: degrada los bordes — zona angosta para que los 6 logos sean visibles */
+            maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
           }}
         >
           {/* Capa base — logos en blanco/gris */}
@@ -521,8 +521,8 @@ function App() {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              maskImage: 'linear-gradient(to right, transparent 28%, black 42%, black 58%, transparent 72%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent 28%, black 42%, black 58%, transparent 72%)',
+              maskImage: 'linear-gradient(to right, transparent 32%, black 44%, black 56%, transparent 68%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 32%, black 44%, black 56%, transparent 68%)',
             }}
           >
             <div className="marquee-track flex items-center gap-14 w-max">
