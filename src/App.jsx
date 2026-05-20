@@ -380,63 +380,46 @@ function App() {
 
       {/* HOW IT WORKS */}
       <section id="workflow" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto text-center mb-20">
-
-          <h2 className="text-5xl font-semibold mb-6">
-            De documentos técnicos a presupuesto listo en horas, no semanas.
-          </h2>
-
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Seis etapas automatizadas que tu equipo hoy hace manualmente en días. Temploct las resuelve en minutos con precisión técnica.
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <p className="text-lg text-gray-400 leading-relaxed">
+            Seis etapas automatizadas que tu equipo hoy hace manualmente en días.<br />
+            Temploct las resuelve en minutos con precisión técnica.
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-6 gap-6">
-
+        {/* Cards con flujo izquierda → derecha */}
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-0">
           {[
-            {
-              icon: FileText,
-              title: 'Sube los antecedentes',
-              desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.'
-            },
-            {
-              icon: ShieldAlert,
-              title: 'Diagnóstico técnico',
-              desc: 'Detecta inconsistencias entre documentos antes de comprometerte con la licitación.'
-            },
-            {
-              icon: Building2,
-              title: 'Partidas automáticas',
-              desc: 'Itemizado completo generado y estructurado por la IA, editable.'
-            },
-            {
-              icon: BarChart3,
-              title: 'APU detallado',
-              desc: 'Análisis de precios unitarios con rendimientos y costos actualizados.'
-            },
-            {
-              icon: CheckCircle2,
-              title: 'Presupuesto listo',
-              desc: 'Presupuesto consolidado, revisable y exportable para tu equipo.'
-            },
-            {
-              icon: CalendarRange,
-              title: 'Carta Gantt',
-              desc: 'Planificación inicial automática alineada al presupuesto.'
-            }
-          ].map((step, i) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-card/70 border border-white/5 rounded-3xl p-6 backdrop-blur-xl hover:border-cyanGlow/20 hover:shadow-glow transition-all duration-500"
-            >
-              <step.icon className="text-cyanGlow mb-6" size={32} />
-              <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
-            </motion.div>
+            { icon: FileText,     title: 'Sube los antecedentes',   desc: 'Planos, EE.TT. y especificaciones técnicas. Cualquier formato.' },
+            { icon: ShieldAlert,  title: 'Diagnóstico técnico',      desc: 'Detecta inconsistencias entre documentos antes de comprometerte.' },
+            { icon: Building2,    title: 'Partidas automáticas',     desc: 'Itemizado completo generado por IA, estructurado y editable.' },
+            { icon: BarChart3,    title: 'APU detallado',            desc: 'Precios unitarios con rendimientos y costos actualizados.' },
+            { icon: CheckCircle2, title: 'Presupuesto listo',        desc: 'Consolidado, revisable y exportable para tu equipo.' },
+            { icon: CalendarRange,title: 'Carta Gantt',              desc: 'Planificación inicial automática alineada al presupuesto.' },
+          ].map((step, i, arr) => (
+            <div key={step.title} className="flex items-stretch flex-1 min-w-0">
+              {/* Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="flex-1 bg-card/70 border border-white/5 rounded-2xl p-5 backdrop-blur-xl hover:border-cyanGlow/20 hover:bg-cyanGlow/5 transition-all duration-500 flex flex-col"
+              >
+                {/* Número de paso */}
+                <span className="text-xs font-semibold text-cyanGlow/50 tracking-widest mb-3">0{i + 1}</span>
+                <step.icon className="text-cyanGlow mb-4" size={24} />
+                <h3 className="text-sm font-semibold text-white mb-2 leading-snug">{step.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed mt-auto">{step.desc}</p>
+              </motion.div>
+
+              {/* Flecha conectora entre cards (excepto en la última) */}
+              {i < arr.length - 1 && (
+                <div className="hidden lg:flex items-center px-1 text-cyanGlow/30 shrink-0">
+                  <ArrowRight size={16} />
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </section>
