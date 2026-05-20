@@ -205,6 +205,51 @@ function App() {
         </div>
       </section>
 
+      {/* EL PROBLEMA */}
+      <section className="px-6 py-28 relative z-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+
+          {/* Columna izquierda — etiqueta + titular */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-[0.2em] mb-6">
+              <span className="text-blue-500 text-base leading-none">●</span>
+              El problema
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-white">
+              Estudiar una propuesta es lo más complejo del rubro. Y lo menos atendido.
+            </h2>
+          </motion.div>
+
+          {/* Columna derecha — párrafos */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            viewport={{ once: true }}
+            className="space-y-6 text-gray-400 text-base md:text-lg leading-relaxed"
+          >
+            <p>
+              Interpretar planos. Analizar documentos extensos, técnicos y contractuales. Revisar y crear partidas. Cubicar. Cotizar. Armar APUs muchas veces sin memoria, sin rendimientos claros por tipo de obra o por zona, con precios dispersos en múltiples fuentes.{' '}
+              <strong className="text-white">Todo eso con el reloj corriendo y la licitación encima.</strong>
+            </p>
+            <p>
+              La presión de no saber si el número que estás presentando te va a dejar dentro o fuera.{' '}
+              <strong className="text-white">Ese es el momento más crítico de cada proyecto</strong>{' '}
+              — y el que más solo se enfrenta.
+            </p>
+            <p>
+              Cuando los equipos rotan, los criterios, los aprendizajes y los precios trabajados con esfuerzo tienden a dispersarse. Cada empresa tiene sus procesos — pero mantener esa memoria viva y accesible es uno de los desafíos más difíciles del rubro.
+            </p>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* STATS BAR */}
       <section className="px-6 py-24 relative z-10">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
