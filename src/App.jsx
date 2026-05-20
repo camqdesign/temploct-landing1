@@ -500,11 +500,11 @@ function App() {
         <div
           className="mx-auto overflow-hidden relative"
           style={{
-            width: logoContainerWidth ? `${logoContainerWidth * 1.35}px` : 'max-content',
+            width: logoContainerWidth ? `${logoContainerWidth * 2.3}px` : 'max-content',
             maxWidth: '100%',
-            /* mask-image: degrada los bordes — zona angosta para que los 6 logos sean visibles */
-            maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+            /* mask-image: fade angosto en bordes para mostrar 3 logos completos + 2 incompletos */
+            maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
           }}
         >
           {/* Capa base — logos en blanco/gris */}
