@@ -420,7 +420,7 @@ function App() {
               {
                 quote: "Detectamos inconsistencias entre arquitectura y estructura que antes solo aparecían en obra. Eso nos ahorra cifras de seis dígitos por proyecto.",
                 name: "Diego Salinas",
-                role: "Project Manager — Incocim Group",
+                role: "Project Manager — INCOCIM Group",
                 avatar: "https://i.pravatar.cc/88?img=12",
                 logo: "/logos/logo-incocim.png",
                 logoAlt: "Incocim Group"
@@ -428,7 +428,7 @@ function App() {
               {
                 quote: "Pudimos triplicar la cantidad de licitaciones que evaluamos al mes sin contratar a nadie nuevo. Es una diferencia operativa enorme.",
                 name: "Carolina Vega",
-                role: "Gerente Técnica — Fuemin",
+                role: "Gerente Técnica — FUEMIN",
                 avatar: "https://i.pravatar.cc/88?img=49",
                 logo: "/logos/logo-fuemin.png",
                 logoAlt: "Fuemin"
@@ -461,41 +461,26 @@ function App() {
         </div>
       </section>
 
-      {/* LOGO CLOUD — con marquee scroll infinito */}
-      <section className="py-16 border-t border-white/5 relative z-10 overflow-hidden">
-        <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
-          Constructoras pioneras en programa beta
-        </p>
-
-        {/* CSS para la animación marquee */}
-        <style>{`
-          @keyframes marquee {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .marquee-track {
-            animation: marquee 28s linear infinite;
-          }
-          .marquee-track:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
-
-        <div className="overflow-hidden">
-          <div className="marquee-track flex items-center gap-16 w-max">
-            {[...Array(2)].flatMap(() => [
-              { src: '/logos/logo-fuemin.png',  alt: 'Fuemin' },
+      {/* LOGO CLOUD */}
+      <section className="py-16 border-t border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-gray-500 text-sm mb-10 uppercase tracking-widest">
+            Constructoras pioneras en programa beta
+          </p>
+          <div className="flex items-center justify-center gap-10 flex-wrap">
+            {[
+              { src: '/logos/logo-fuemin.png',  alt: 'FUEMIN' },
               { src: '/logos/logo-abf.png',     alt: 'ABF Constructora' },
               { src: '/logos/logo-ryv.png',     alt: 'R&V Constructora' },
               { src: '/logos/logo-la27.png',    alt: 'LA 27 Ingeniería' },
               { src: '/logos/logo-rrs.png',     alt: 'RRS Ingeniería' },
-              { src: '/logos/logo-incocim.png', alt: 'Incocim Group' },
-            ]).map((logo, i) => (
+              { src: '/logos/logo-incocim.png', alt: 'INCOCIM Group' },
+            ].map((logo, i) => (
               <img
                 key={i}
                 src={logo.src}
                 alt={logo.alt}
-                className="h-14 md:h-16 object-contain shrink-0 transition-all duration-300"
+                className="h-12 md:h-14 object-contain transition-all duration-300"
                 style={{ filter: 'grayscale(100%) brightness(5)', opacity: 0.55 }}
                 onMouseEnter={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
                 onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(100%) brightness(5)'; e.currentTarget.style.opacity = '0.55'; }}
